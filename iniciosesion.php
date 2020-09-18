@@ -2,29 +2,28 @@
   <!-- Navbar-->
   <!-- Navigation-->
   <?php
-  if ($_POST) {
-    //Llamar a la conexion base de datos
-    include_once 'dao/conexion.php';
-    //Comparar cedula con la base de datos
-    $correo = $_POST['correo'];
-    $contrasena = $_POST['contrasena'];
-    $sql_inicio = "SELECT*FROM tbl_usuario WHERE correo_usu ='$correo' AND contrasena_usu ='$contrasena'";
-    $consulta_resta = $pdo->prepare($sql_inicio);
-    $consulta_resta->execute(array($correo, $contrasena));
-    $resultado = $consulta_resta->rowCount();
-    $prueba = $consulta_resta->fetch(PDO::FETCH_OBJ);
+if ($_POST) {
+//Llamar a la conexion base de datos
+include_once 'dao/conexion.php';
+//Captura de información
+$correo_electronico = $_POST['correo'];
+$contrasena = $_POST['contrasena'];
+$sql_inicio = "SELECT*FROM tbl_usuario WHERE correo_usu ='$correo_electronico' AND contrasena_usu='$contrasena'";
+$consulta_resta = $pdo->prepare($sql_inicio);
+$consulta_resta->execute(array($correo_electronico, $contrasena));
+$resultado = $consulta_resta->rowCount();
+$prueba = $consulta_resta->fetch(PDO::FETCH_OBJ);
 
-    //Ingreso al sistema
-    if ($resultado) {
-      echo "<script>alert('Correo y/o contraseña incorrecto');</script>";
-
-    } else {
-      $_SESSION["correo_usu"] = $prueba->correo_usu;
-      echo "<script> document.location.href='../frutafresca/dashboard/cards.html';</script>";
-      
-    }
-  }
-  ?>
+//Ingreso al sistema
+if ($resultado) {
+  $_SESSION["tbl_usuario"] = $prueba->tbl_usuario;
+  echo "<script> document.location.href='dashboard/index.php';</script>";
+} else {
+  echo "<script>alert('Correo y/o contraseña incorrectos, verifica e intenta nuevamente');</script>";
+  echo "<script> document.location.href='iniciosesion.php';</script>";
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,7 +35,7 @@
   <link rel="stylesheet" href="css/registro.css">
   <link rel="stylesheet" href="css/letra1.css">
   <link rel="stylesheet" href="css/letra2.css">
-  <link href="css/styles.css" rel="stylesheet" />
+  <link href="..css/styles.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/inicio.css">
   <link rel="stylesheet" href="../css/letra.css">
   <script src="js/jquery-3.5.1.js"></script>
