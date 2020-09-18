@@ -54,7 +54,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #fcf8e3;
   text-align: left;
   background-color: rgb(0, 0, 0); }
 
@@ -4802,7 +4802,7 @@ button.bg-dark:focus {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #ffa533 !important; }
+  border-color: ##ffa733 !important; }
 
 .border-secondary {
   border-color: #52ff33 !important; }
@@ -7380,7 +7380,7 @@ form .row:first-child .floating-label-form-group {
   color: #fff; }
 
 .copyright {
-  background-color: #148600 ; }
+  background-color: #8c948b ; }
 
 #brandImage {
   height: 2rem; }
