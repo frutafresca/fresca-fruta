@@ -7,7 +7,7 @@ if ($_POST) {
 include_once 'dao/conexion.php';
 //Captura de información
 $correo_electronico = $_POST['correo'];
-$contrasena = $_POST['contrasena'];
+$contrasena = md5($_POST['contrasena']);
 $sql_inicio = "SELECT*FROM tbl_usuario WHERE correo_usu ='$correo_electronico' AND contrasena_usu='$contrasena'";
 $consulta_resta = $pdo->prepare($sql_inicio);
 $consulta_resta->execute(array($correo_electronico, $contrasena));
@@ -19,7 +19,7 @@ if ($resultado) {
   $_SESSION["tbl_usuario"] = $prueba->tbl_usuario;
   echo "<script> document.location.href='dashboard/index.php';</script>";
 } else {
-  echo "<script>alert('Correo y/o contraseña incorrectos, verifica e intenta nuevamente');</script>";
+  echo "<script>alert('Correo y/o contraseña incorrectos, verifica e intenta nuevamente.');</script>";
   echo "<script> document.location.href='iniciosesion.php';</script>";
 }
 }

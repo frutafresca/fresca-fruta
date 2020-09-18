@@ -9,7 +9,8 @@ if ($_POST) {
   $cedula = $_POST['cedula'];
   $telefono = $_POST['telefono'];
   $correo = $_POST['correo'];
-  $contrasena = $_POST['contrasena'];
+  $contrasena = md5($_POST['contrasena']);
+  $roles = $_POST['roles'];
   //LLamo al campo cédula y verifico que no esté registrado
   $sql_restaexistente = "SELECT * FROM tbl_usuario WHERE cedula_usu='$cedula'";
   $consulta_resta = $pdo->prepare($sql_restaexistente);
@@ -21,11 +22,11 @@ if ($_POST) {
     echo "<script>alert('La cédula ingresada ya existe!, por favor verificala e intenta nuevamente');</script>";
   } else {
     //sentencia Sql
-    $sql_insertar = "INSERT INTO tbl_usuario (nombre_usu,apellido_usu,cedula_usu,telefono_usu,correo_usu,contrasena_usu)VALUES (?,?,?,?,?,?)";
+    $sql_insertar = "INSERT INTO tbl_usuario (nombre_usu,apellido_usu,cedula_usu,telefono_usu,correo_usu,contrasena_usu,roles_idroles)VALUES (?,?,?,?,?,?,?)";
     //Preparar consulta
     $consulta_insertar = $pdo->prepare($sql_insertar);
     //Ejecutar la sentencia
-    $consulta_insertar->execute(array($nombre, $apellido, $cedula, $telefono, $correo, $contrasena));
+    $consulta_insertar->execute(array($nombre, $apellido, $cedula, $telefono, $correo, $contrasena,$roles));
     echo "<script>alert('Datos almacenados correctamente');</script>";
   }
 }
@@ -89,7 +90,7 @@ if ($_POST) {
                 <select name="roles" class="form-control" required autofocus>
                   <option value="">Seleccione un rol</option>
                   <option value="1">Administrador</option>
-                  <option value="3">Usuario</option>
+                  <option value="3">Trabajador</option>
                   <option value="2">Cliente</option>
                 </select>
               </div>
