@@ -43,7 +43,7 @@ if ($resultado) {
   <title>Iniciar Sesión</title>
 </head>
 
-<body id="page-top" style="background-color: rgb(255, 227, 203);">
+<body id="page-top" style="background-color: rgb(205, 207, 203);">
   <br>
   <br>
   <br>

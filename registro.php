@@ -1,7 +1,16 @@
 <?php
 //Llamar a la conexion base de datos
 include_once 'dao/conexion.php';
-//Imprimir var dump -> Arreglos u objetos
+
+// mostrar los datis de la bd
+
+$sql_mostrar = "SELECT * FROM tbl_usuario";
+// preparar la sentencia 
+$consulta_mostrar = $pdo->prepare($sql_mostrar);
+//ejecutar la consulta 
+$consulta_mostrar->execute();
+$resultado_mostrar = $consulta_mostrar->fetchAll();
+
 //Captura de información
 if ($_POST) {
   $nombre = $_POST['nombre'];
@@ -28,10 +37,13 @@ if ($_POST) {
     //Ejecutar la sentencia
     $consulta_insertar->execute(array($nombre, $apellido, $cedula, $telefono, $correo, $contrasena,$roles));
     echo "<script>alert('Datos almacenados correctamente');</script>";
+    // refrescar pagina 
+    header('location:registro.php');
   }
 }
 ?>
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -107,6 +119,39 @@ if ($_POST) {
     </div>
   </div>
   <br>
+  <br>
+  <!-- tabla usuario-->
+<table>
+<thead>
+  <tr style="border: 1px solid black">
+    <td style="border: 1px solid black">Nombre</td>
+    <td style="border: 1px solid black">Apellido</td>
+    <td style="border: 1px solid black">Cédula</td>
+    <td style="border: 1px solid black">Telefono</td>
+    <td style="border: 1px solid black">Correo</td>
+    <td style="border: 1px solid black">Contraseña</td>
+    <td style="border: 1px solid black">Acciones</td>
+
+  </tr>
+</thead>
+<tbody>
+  
+<?php foreach ($resultado_mostrar as $datos): ?>
+
+  <tr style="border: 1px solid black">
+    <td style="border: 1px solid black"><?php echo $datos['nombre_usu'] ?> </td>
+    <td style="border: 1px solid black"><?php echo $datos['apellido_usu'] ?> </td>
+    <td style="border: 1px solid black"><?php echo $datos['cedula_usu'] ?> </td>
+    <td style="border: 1px solid black"><?php echo $datos['telefono_usu'] ?> </td>
+    <td style="border: 1px solid black"><?php echo $datos['correo_usu'] ?> </td>
+    <td style="border: 1px solid black"><?php echo $datos['contrasena_usu'] ?> </td>
+    <td style="border: 1px solid black"><a href="eliminar.php?id=<?php echo $datos['idusuario'] ?> "><button type="submit">Eliminar</button></a></td>
+
+  </tr>
+  <?php endforeach ?>
+</tbody>
+</table>
+
   <!-- Sección de copyright-->
   <div class="copyright py-4 text-center text-white" id="letra">
     <div class="container"><small>FrutaFresca © Tu sitio web 2020</small></div>
@@ -121,6 +166,6 @@ if ($_POST) {
   <script src="assets/mail/contact_me.js"></script>
   <!-- Core theme JS-->
   <script src="js/scripts.js"></script>
-</body>
 
+</body>
 </html>

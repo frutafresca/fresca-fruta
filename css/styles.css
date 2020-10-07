@@ -7382,22 +7382,6 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #8c948b ; }
 
-#brandImage {
-  height: 2rem; }
-
-.portfolio {
-  padding-top: 6rem;
-  padding-bottom: 4.5rem; }
-
-.page-section-heading {
-  display: inline-block; }
-
-.pre {
-  white-space: pre; }
-
-.pre-wrap {
-  white-space: pre-wrap; }
-
 .icon-contact {
   display: flex;
   height: 5rem;
@@ -7406,7 +7390,7 @@ form .row:first-child .floating-label-form-group {
   justify-content: center;
   font-size: 2rem;
   background-color: #ffa533;
-  color: #fff;
+  color: rgb(255, 255, 255);
   border-radius: 100%; }
 
 .navbar-brand img {
