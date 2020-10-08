@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,14 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Invitado</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="../Classdiamond2/img/plazoleta/plaz25.jpg" />
-    <script src="../Classdiamond2/js/all.js"></script>
-    <link rel="stylesheet" href="../Classdiamond2/css/letra1.css">
-    <link rel="stylesheet" href="../Classdiamond2/css/letra2.css">
-    <link rel="stylesheet" href="../Classdiamond2/css/estiloss.css">
-    <link rel="stylesheet" href="../Classdiamond2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Classdiamond2/css/imagen.css">
-    <link rel="stylesheet" href="../Classdiamond2/css/letra.css">
+    <script src="../frutafresca/js/all.js"></script>
+    <link rel="stylesheet" href="../frutafresca/css/letra1.css">
+    <link rel="stylesheet" href="../frutafresca/css/letra2.css">
+    <link rel="stylesheet" href="../frutafresca/css/estiloss.css">
+    <link rel="stylesheet" href="../frutafresca/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../frutafresca/css/imagen.css">
+    <link rel="stylesheet" href="../frutafresca/css/letra.css">
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -30,10 +33,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive" id="letra">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/index.php">Inicio</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/menu.php">Productos</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/iniciosesion.php">Iniciar sesión</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/registro.php">Registrarse</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/index.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Inicio</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/menu.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Productos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/comprar.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Comprar</a></li>
                 </ul>
             </div>
         </div>
@@ -41,3 +43,8 @@
 </body>
 
 </html>
+<?php
+} else {
+  echo "<script> document.location.href='../frutafresca/dashboard/404.php';</script>";
+}
+?>

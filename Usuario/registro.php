@@ -1,6 +1,6 @@
 <?php
 //Llamar a la conexion base de datos
-include_once 'dao/conexion.php';
+include_once '../dao/conexion.php';
 
 // mostrar los datis de la bd
 
@@ -51,18 +51,18 @@ if ($_POST) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Favicon-->
   <link rel="stylesheet" href="css/bootstrap.css">
-  <script src="js/jquery-3.5.1.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <link rel="stylesheet" href="css/iniciosesion.css">
-  <link rel="stylesheet" href="css/letra1.css">
-  <link rel="stylesheet" href="css/letra2.css">
-  <link href="css/styles.css" rel="stylesheet" />
+  <script src="../js/jquery-3.5.1.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <link rel="stylesheet" href="../css/iniciosesion.css">
+  <link rel="stylesheet" href="../css/letra1.css">
+  <link rel="stylesheet" href="../css/letra2.css">
+  <link href="../css/styles.css" rel="stylesheet" />
   <title>Registrarse</title>
 
 </head>
 
 <body style="background-color: rgb(255, 227, 203);">
-  <?php require_once 'Navbar/navbar_invi.php'; ?>
+  <?php require_once '../Navbar/navbar_invi.php'; ?>
   <br>
   <br>
   <br>
@@ -102,14 +102,13 @@ if ($_POST) {
                 <select name="roles" class="form-control" required autofocus>
                   <option value="">Seleccione un rol</option>
                   <option value="1">Administrador</option>
-                  <option value="3">Trabajador</option>
                   <option value="2">Cliente</option>
                 </select>
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarse</button>
               <br>
               <div class="text-center">
-                <a href="iniciosesion.php" type="submit">
+                <a href="iniciar sesion.php" type="submit">
                   <p>Iniciar sesión</p>
                 </a></div>
             </form>

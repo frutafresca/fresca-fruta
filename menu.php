@@ -8,7 +8,28 @@
 </head>
 
 <body>
-    <?php require_once 'Navbar/navbar_invi.php'; ?>
+    <?php
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        include_once 'dao/conexion.php';
+        $sql_inicio = "SELECT*FROM tbl_usuario WHERE correo_usu ='$id' ";
+        $consulta_resta = $pdo->prepare($sql_inicio);
+        $consulta_resta->execute();
+        $resultado = $consulta_resta->rowCount();
+        $prueba = $consulta_resta->fetch(PDO::FETCH_OBJ);
+        //Validacion de roles
+        if ($resultado) {
+            $rol = $prueba->roles_idroles;
+            if ($rol == 1) {
+                require_once 'Navbar/navbar_admin.php';
+            } else if ($rol == 2) {
+                require_once 'Navbar/navbar_cli.php';
+            }
+        }
+    } else {
+        require_once 'Navbar/navbar_invi.php';
+    }
+    ?>
 
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
