@@ -42,6 +42,17 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
             <span>Inicio</span></a>
         </li>
 
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+          <a class="nav-link" href="local.php">
+            <span>Local</span></a>
+        </li>
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+          <a class="nav-link" href="edicionproductos.php">
+            <span>Editor de Productos</span></a>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
       </ul>

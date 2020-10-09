@@ -35,7 +35,8 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/index.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Inicio</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/menu.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Productos</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/comprar.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Comprar</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/productos.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Comprar</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Controladores/Cerrar_Sesion.php">Cerrar sesión</a></li>
                 </ul>
             </div>
         </div>

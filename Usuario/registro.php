@@ -144,7 +144,7 @@ if ($_POST) {
     <td style="border: 1px solid black"><?php echo $datos['telefono_usu'] ?> </td>
     <td style="border: 1px solid black"><?php echo $datos['correo_usu'] ?> </td>
     <td style="border: 1px solid black"><?php echo $datos['contrasena_usu'] ?> </td>
-    <td style="border: 1px solid black"><a href="eliminar.php?id=<?php echo $datos['idusuario'] ?> "><button type="submit">Eliminar</button></a></td>
+    <td style="border: 1px solid black"><a href="../eliminar.php?id=<?php echo $datos['idusuario'] ?> "><button type="submit">Eliminar</button></a></td>
 
   </tr>
   <?php endforeach ?>

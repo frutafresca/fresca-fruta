@@ -218,79 +218,40 @@
             </div>
         </div>
     </div>
-    <section class="page-section bg-primary text-white mb-0" id="about">
-        <div class="container">
-            <!-- About Section Heading-->
-            <div class="text-center">
-                <h2 class="page-section-heading d-inline-block text-white">Texto</h2>
-            </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- About Section Content-->
-            <div class="row">
-                <div class="col-lg-4 ml-auto">
-                    <p class="pre-wrap lead">Texto</p>
-                </div>
-                <div class="col-lg-4 mr-auto">
-                    <p class="pre-wrap lead">Texto</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="page-section" id="contact">
-        <div class="container">
-            <!-- Contact Section Heading-->
-            <div class="text-center">
-                <h2 class="page-section-heading text-secondary d-inline-block mb-0">Contacto</h2>
-            </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Contact Section Content-->
-            <div class="row justify-content-center">
-                <div class="col-lg-4">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
-                        <div class="text-muted">Phone</div>
-                        <div class="lead font-weight-bold">569 23 43</div>
+    <?php
+    include_once 'dao/conexion.php';
+    //Mostrar los datos almacenados
+    $sql_mostrar = "SELECT * FROM negocio";
+    //Prepara sentencia
+    $Consultar_mostrar = $pdo->prepare($sql_mostrar);
+    //Ejecutar consulta
+    $Consultar_mostrar->execute();
+    $resultado_mostrar = $Consultar_mostrar->fetchAll();
+    ?>
+    <!-- Contact Section Heading-->
+    <?php foreach ($resultado_mostrar as $datos) { ?>
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="mb-4">Dirección</h4>
+                        <p class="pre-wrap lead mb-0"> <?php echo $datos['direccion_negocio'] ?></p>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
-                        <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:frutafresca164@gmail.com ">frutafresca164@gmail.com </a>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="mb-4">Telefono</h4>
+                        <p class="pre-wrap lead mb-0"><?php echo $datos['telefono_negocio'] ?></p>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="mb-4">Correo</h4>
+                        <p class="pre-wrap lead mb-0"> <?php echo $datos['correo_negocio'] ?></p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <footer class="footer text-center">
-        <div class="container">
-            <div class="row">
-                <!-- Footer Location-->
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="mb-4">Dirección</h4>
-                    <p class="pre-wrap lead mb-0">Cra. 31 No. 25-125 La dalia parte baja </p>
-                </div>
-                <!-- Footer Social Icons-->
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="mb-4">Web</h4><a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/StartBootstrap"><i class="fab fa-fw fa-facebook-f"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.twitter.com/sbootstrap"><i class="fab fa-fw fa-twitter"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/startbootstrap"><i class="fab fa-fw fa-linkedin-in"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.dribble.com/startbootstrap"><i class="fab fa-fw fa-dribbble"></i></a>
-                </div>
-                <!-- Footer About Text-->
-                <div class="col-lg-4">
-                    <h4 class="mb-4">Texto</h4>
-                    <p class="pre-wrap lead mb-0">Texto</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    <?php } ?>
     <!-- Copyright Section-->
     <section class="copyright py-4 text-center text-white">
         <div class="container"><small class="pre-wrap">Copyright © Your Website 2020</small></div>
