@@ -131,6 +131,51 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
             </ul>
 
           </footer>
+          <?php
+          //Llamar a la conexion base de datos
+          include_once '../dao/conexion.php';
+
+          // mostrar los datis de la bd
+
+          $sql_mostrar = "SELECT * FROM tbl_usuario";
+          // preparar la sentencia 
+          $consulta_mostrar = $pdo->prepare($sql_mostrar);
+          //ejecutar la consulta 
+          $consulta_mostrar->execute();
+          $resultado_mostrar = $consulta_mostrar->fetchAll();
+          ?>
+
+          <!-- tabla usuario-->
+          <table>
+            <thead>
+              <tr style="border: 1px solid black">
+                <td style="border: 1px solid black">Nombre</td>
+                <td style="border: 1px solid black">Apellido</td>
+                <td style="border: 1px solid black">Cédula</td>
+                <td style="border: 1px solid black">Telefono</td>
+                <td style="border: 1px solid black">Correo</td>
+                <td style="border: 1px solid black">Contraseña</td>
+                <td style="border: 1px solid black">Acciones</td>
+
+              </tr>
+            </thead>
+            <tbody>
+
+              <?php foreach ($resultado_mostrar as $datos) : ?>
+
+                <tr style="border: 1px solid black">
+                  <td style="border: 1px solid black"><?php echo $datos['nombre_usu'] ?> </td>
+                  <td style="border: 1px solid black"><?php echo $datos['apellido_usu'] ?> </td>
+                  <td style="border: 1px solid black"><?php echo $datos['cedula_usu'] ?> </td>
+                  <td style="border: 1px solid black"><?php echo $datos['telefono_usu'] ?> </td>
+                  <td style="border: 1px solid black"><?php echo $datos['correo_usu'] ?> </td>
+                  <td style="border: 1px solid black"><?php echo $datos['contrasena_usu'] ?> </td>
+                  <td style="border: 1px solid black"><a href="../eliminar.php?id=<?php echo $datos['idusuario'] ?> "><button type="submit">Eliminar</button></a></td>
+
+                </tr>
+              <?php endforeach ?>
+            </tbody>
+          </table>
 
           <!-- Footer -->
           <footer class="sticky-footer bg-white">
@@ -166,7 +211,6 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
           </div>
         </div>
       </div>
-
       <!-- Bootstrap core JavaScript-->
       <script src="vendor/jquery/jquery.min.js"></script>
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

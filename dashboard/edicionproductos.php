@@ -42,17 +42,32 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         <span>Inicio</span></a>
                 </li>
 
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
                     <a class="nav-link" href="local.php">
                         <span>Local</span></a>
                 </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
                     <a class="nav-link" href="edicionproductos.php">
                         <span>Editor de Productos</span></a>
                 </li>
 
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="usuarios.php">
+                        <span>Administrar usuarios</span></a>
+                </li>
 
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0">
@@ -116,7 +131,156 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         </ul>
 
                     </footer>
+                    <?php
+                    //Llamar a la conexion base de datos
+                    include_once '../dao/conexion.php';
+                    //Mostrar los datos almacenados
+                    $sql_mostrar = "SELECT * FROM producto";
+                    //Prepara sentencia
+                    $Consultar_mostrar = $pdo->prepare($sql_mostrar);
+                    //Ejecutar consulta
+                    $Consultar_mostrar->execute();
+                    $resultado_mostrar = $Consultar_mostrar->fetchAll();
+                    //Imprimir var dump -> Arreglos u objetos
+                    //Captura de información
+                    if ($_POST) {
+                        $nombre = $_POST['nombre'];
+                        $descripcion = $_POST['descripcion'];
+                        $precio= $_POST['precio'];
+                        $foto = $_POST['foto'];
+                        //sentencia Sql
+                        $sql_insertar = "INSERT INTO producto (nombre_producto, descripcion_producto, precio_producto, foto_producto)VALUES (?,?,?,?)";
+                        //Preparar consulta
+                        $consulta_insertar = $pdo->prepare($sql_insertar);
+                        //Ejecutar la sentencia
+                        $consulta_insertar->execute(array($nombre, $descripcion, $precio, $foto));
+                        //Header redirecciona la pagina
+                        echo "<script> document.location.href='edicionproductos.php';</script>";
+                    }
+                    //Mostrar o traer los campos del editar
+                    if ($_GET) {
+                        //Captura el id del usuario a editar
+                        $id = $_GET['id'];
+                        //Sentencia sql para mostrar
+                        $sql_editar = "SELECT * FROM producto WHERE idproducto=?";
+                        //Preparar consulta
+                        $consulta_editar = $pdo->prepare($sql_editar);
+                        //Ejecutar consulta
+                        $consulta_editar->execute(array($id));
+                        $resultado_editar = $consulta_editar->fetch();
+                        //Mostrar prueba
+                        //var_dump($resultado_editar);
+                    }
+                    ?>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h4 align="center" class="m-0 font-weight-bold text-primary">Información de productos</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <!---FORMULARIO DE REGISTRO-->
+                                    <?php if (!$_GET) { ?>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                                    <div class="card card-signin my-5">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title text-center">Registrar productos</h5>
+                                                            <div align="center">
+                                                                <form action="" method="POST">
+                                                                    <div class="form-label-group">
+                                                                        <input class="form-control" placeholder="Nombre" required autofocus type="text" name="nombre">
+                                                                        <br>
+                                                                        <input class="form-control" placeholder="Descripcion" required autofocus type="text" name="descripcion">
+                                                                        <br>
+                                                                        <input class="form-control" placeholder="Precio" required autofocus type="text" name="precio">
+                                                                        <br>
+                                                                        <input class="form-control-file" placeholder="Foto" required autofocus type="file" name="foto">
+                                                                        <br>
+                                                                        <button class="btn btn-primary btn-xs" type="Submit">Registrar</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            <?php } ?>
+                            <!---**************************** -->
+                            <!---Formulario para editar -->
+                            <?php if ($_GET) { ?>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                            <div class="card card-signin my-5">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-center">Editar productos</h5>
+                                                    <div align="center">
+                                                        <form action="actualizar_productos.php" method="GET">
+                                                            <div class="form-label-group">
+                                                                <input class="form-control" placeholder="Nombre" required autofocus type="text" name="nombre" value="<?php echo $resultado_editar['nombre_producto']; ?>">
+                                                                <br>
+                                                                <input class="form-control" placeholder="Descripcion" required autofocus type="text" name="descripcion" value="<?php echo $resultado_editar['descripcion_producto']; ?>">
+                                                                <br>
+                                                                <input class="form-control" placeholder="Precio" required autofocus type="text" name="precio" value="<?php echo $resultado_editar['precio_producto']; ?>">
+                                                                <br>
+                                                                <input class="form-control-file" placeholder="Foto" required autofocus type="file" name="foto" value="<?php echo $resultado_editar['foto_producto']; ?>">
+                                                                <br>
+                                                                <input class="form-control" placeholder="id" required autofocus type="hidden" name="id_editar" value="<?php echo $resultado_editar['idproducto']; ?>">
+                                                                <br>
+                                                                <button class="btn btn-primary btn-xs" type="Submit">Editar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <!---**************************** -->
+                        <!---Tabla de restaurantes -->
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr align="center" Style="border: 2px solid black">
+                                        <th Style="border: 2px solid black">Nombre</th>
+                                        <th Style="border: 2px solid black">Descripción</th>
+                                        <th Style="border: 2px solid black">Precio</th>
+                                        <th Style="border: 2px solid black">Foto</th>
+                                        <th Style="border: 2px solid black">Eliminar</th>
+                                        <th Style="border: 2px solid black">Editar</th>
 
+                                    <tr>
+
+
+                                </thead>
+
+                                <tbody>
+                                    <?php foreach ($resultado_mostrar as $datos) { ?>
+                                        <tr align="center" Style="border: 2px solid black">
+                                            <td style="border: 2px solid black"><?php echo $datos['nombre_producto'] ?></td>
+                                            <td style="border: 2px solid black"><?php echo $datos['descripcion_producto'] ?></td>
+                                            <td style="border: 2px solid black"><?php echo $datos['precio_producto'] ?></td>
+                                            <td style="border: 2px solid black"><?php echo $datos['foto_producto'] ?></td>
+                                            <td style="border: 2px solid black"><a href="eliminar_producto.php?id=<?php echo $datos['idproducto']; ?>">
+                                                    <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
+                                            <td style="border: 2px solid black"><a href="edicionproductos.php?id=<?php echo $datos['idproducto']; ?>">
+                                                    <button class="btn btn-primary btn-xs" type="submit">Editar</button></a></td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php } ?>
+                        </div>
+                    </div>
+                </div>
                     <!-- Footer -->
                     <footer class="sticky-footer bg-white">
                         <div class="container my-auto">

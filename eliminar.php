@@ -10,6 +10,6 @@ $consulta_eliminar-> execute(array($id));
 
 // redireccionar
 
-header('location:Usuario/registro.php');
+header('location:usuarios.php');
 
 ?>

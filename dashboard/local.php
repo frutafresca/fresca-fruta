@@ -41,18 +41,36 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <a class="nav-link" href="../index.php?id=<?php echo $_SESSION["correo_usu"]; ?>">
                         <span>Inicio</span></a>
                 </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
                     <a class="nav-link" href="local.php">
                         <span>Local</span></a>
                 </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
                     <a class="nav-link" href="edicionproductos.php">
                         <span>Editor de Productos</span></a>
                 </li>
 
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
 
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="usuarios.php">
+                        <span>Administrar usuarios</span></a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
 
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0">
@@ -140,8 +158,8 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         $consulta_insertar->execute(array($nombre, $direccion, $telefono, $correo));
                         //Header redirecciona la pagina
                         echo "<script> document.location.href='../dashboard/local.php';</script>";
-                    } 
-                     //Mostrar o traer los campos del editar
+                    }
+                    //Mostrar o traer los campos del editar
                     if ($_GET) {
                         //Captura el id del usuario a editar
                         $id = $_GET['id'];
@@ -155,7 +173,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         //Mostrar prueba
                         //var_dump($resultado_editar);
                     }
-                    ?>  
+                    ?>
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <!-- DataTales Example -->

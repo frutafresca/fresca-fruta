@@ -119,37 +119,6 @@ if ($_POST) {
   </div>
   <br>
   <br>
-  <!-- tabla usuario-->
-<table>
-<thead>
-  <tr style="border: 1px solid black">
-    <td style="border: 1px solid black">Nombre</td>
-    <td style="border: 1px solid black">Apellido</td>
-    <td style="border: 1px solid black">Cédula</td>
-    <td style="border: 1px solid black">Telefono</td>
-    <td style="border: 1px solid black">Correo</td>
-    <td style="border: 1px solid black">Contraseña</td>
-    <td style="border: 1px solid black">Acciones</td>
-
-  </tr>
-</thead>
-<tbody>
-  
-<?php foreach ($resultado_mostrar as $datos): ?>
-
-  <tr style="border: 1px solid black">
-    <td style="border: 1px solid black"><?php echo $datos['nombre_usu'] ?> </td>
-    <td style="border: 1px solid black"><?php echo $datos['apellido_usu'] ?> </td>
-    <td style="border: 1px solid black"><?php echo $datos['cedula_usu'] ?> </td>
-    <td style="border: 1px solid black"><?php echo $datos['telefono_usu'] ?> </td>
-    <td style="border: 1px solid black"><?php echo $datos['correo_usu'] ?> </td>
-    <td style="border: 1px solid black"><?php echo $datos['contrasena_usu'] ?> </td>
-    <td style="border: 1px solid black"><a href="../eliminar.php?id=<?php echo $datos['idusuario'] ?> "><button type="submit">Eliminar</button></a></td>
-
-  </tr>
-  <?php endforeach ?>
-</tbody>
-</table>
 
   <!-- Sección de copyright-->
   <div class="copyright py-4 text-center text-white" id="letra">

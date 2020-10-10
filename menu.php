@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Productos</title>
 </head>
 
 <body>
@@ -30,67 +30,49 @@
         require_once 'Navbar/navbar_invi.php';
     }
     ?>
-
+    <?php
+    include_once 'dao/conexion.php';
+    //Mostrar los datos almacenados
+    $sql_mostrar = "SELECT * FROM producto";
+    //Prepara sentencia
+    $Consultar_mostrar = $pdo->prepare($sql_mostrar);
+    //Ejecutar consulta
+    $Consultar_mostrar->execute();
+    $resultado_mostrar = $Consultar_mostrar->fetchAll();
+    //Imprimir var dump -> Arreglos u objetos
+    ?>
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
             <div class="text-center">
-                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Algunos productos </h2>
+                <br>
+                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Productos </h2>
             </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
+            <p class="pplaz"></p>
+
+            <div class="container">
+                <div class="row">
+                    <?php foreach ($resultado_mostrar as $datos) {
+                    ?>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                    <h4 class="card-title">
+                                        <p><?php echo $datos['nombre_producto'] ?></p>
+                                    </h4>
+                                    <p><?php echo $datos['descripcion_producto'] ?></p>
+                                    <p>$<?php echo $datos['precio_producto'] ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+                <!-- /.row -->
             </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row justify-content-center">
-                <!-- Portfolio Items-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="img/aceite.jpg" alt="Log Cabin" />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="img/panela-.jpg" alt="Tasty Cake" />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="img/papa.jpg" alt="Circus Tent" />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="img/tomates.jpg" alt="Controller" />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="img/fresas.jpg" alt="Locked Safe" />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="img/mango.jpg" alt="Submarine" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- /.container -->
 </body>
 
 </html
