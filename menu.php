@@ -48,31 +48,203 @@
                 <br>
                 <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Productos </h2>
             </div>
-            <p class="pplaz"></p>
-
-            <div class="container">
-                <div class="row">
-                    <?php foreach ($resultado_mostrar as $datos) {
-                    ?>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
-                                    <h4 class="card-title">
-                                        <p><?php echo $datos['nombre_producto'] ?></p>
-                                    </h4>
-                                    <p><?php echo $datos['descripcion_producto'] ?></p>
-                                    <p>$<?php echo $datos['precio_producto'] ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
+            <br>
+            <center>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <b>
+                            <p>Categorias</p>
+                        </b>
+                        <u><a class="nav-link" href="#item-5">Frutas</a></u>
+                        <u><a class="nav-link" href="#item-1">Verduras</a></u>
+                        <u><a class="nav-link" href="#item-2">Aseo</a></u>
+                        <u><a class="nav-link" href="#item-3">Granos</a></u>
+                        <u><a class="nav-link" href="#item-4">Lacteos</a></u>
+                        <u><a class="nav-link" href="#item-6">Carnes frias</a></u>
+                    </div>
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
+                <center>
+
+                    <p id="item-5"></p><br><br><br>
+                    <p class="tituloplaz" align="center">Frutas</p>
+                    <p class="pplaz"></p>
+
+                    <div class="container">
+                        <div class="row">
+                            <?php foreach ($resultado_mostrar as $datos) {
+                                if ($datos['categoria_producto_idcategoria_producto'] == 1) {
+                            ?>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                                <h4 class="card-title">
+                                                    <p><?php echo $datos['nombre_producto'] ?></p>
+                                                </h4>
+                                                <p><?php echo $datos['descripcion_producto'] ?></p>
+                                                <p>$<?php echo $datos['precio_producto'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+
+                    <p id="item-1"></p><br><br>
+                    <p class="tituloplaz" align="center">Verduras</p>
+                    <!-- Page Content -->
+                    <div class="container">
+                        <div class="row">
+                            <?php foreach ($resultado_mostrar as $datos) {
+                                if ($datos['categoria_producto_idcategoria_producto'] == 2) {
+                            ?>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                                <h4 class="card-title">
+                                                    <p><?php echo $datos['nombre_producto'] ?></p>
+                                                </h4>
+                                                <p><?php echo $datos['descripcion_producto'] ?></p>
+                                                <p>$<?php echo $datos['precio_producto'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+
+                    <p id="item-2"></p><br><br>
+                    <p align="center">Aseo</p>
+                    <!-- Page Content -->
+                    <!-- Page Content -->
+                    <div class="container">
+                        <div class="row">
+                            <?php foreach ($resultado_mostrar as $datos) {
+                                if ($datos['categoria_producto_idcategoria_producto'] == 3) {
+                            ?>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                                <h4 class="card-title">
+                                                    <p><?php echo $datos['nombre_producto'] ?></p>
+                                                </h4>
+                                                <p><?php echo $datos['descripcion_producto'] ?></p>
+                                                <p>$<?php echo $datos['precio_producto'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+
+                    <p id="item-3"></p><br><br>
+                    <p class="tituloplaz" align="center">Granos</p>
+                    <!-- Page Content -->
+                    <!-- Page Content -->
+                    <div class="container">
+                        <div class="row">
+                            <?php foreach ($resultado_mostrar as $datos) {
+                                if ($datos['categoria_producto_idcategoria_producto'] == 4) {
+                            ?>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                                <h4 class="card-title">
+                                                    <p><?php echo $datos['nombre_producto'] ?></p>
+                                                </h4>
+                                                <p><?php echo $datos['descripcion_producto'] ?></p>
+                                                <p>$<?php echo $datos['precio_producto'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+
+                    <p id="item-4"></p><br><br>
+                    <p align="center">Lacteos</p>
+                    <!-- Page Content -->
+                    <!-- Page Content -->
+                    <div class="container">
+                        <div class="row">
+                            <?php foreach ($resultado_mostrar as $datos) {
+                                if ($datos['categoria_producto_idcategoria_producto'] == 5) {
+                            ?>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                                <h4 class="card-title">
+                                                    <p><?php echo $datos['nombre_producto'] ?></p>
+                                                </h4>
+                                                <p><?php echo $datos['descripcion_producto'] ?></p>
+                                                <p>$<?php echo $datos['precio_producto'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+
+                    <p id="item-6"></p><br><br>
+                    <p class="tituloplaz" align="center">Carnes frias</p>
+                    <!-- Page Content -->
+                    <!-- Page Content -->
+                    <div class="container">
+                        <div class="row">
+                            <?php foreach ($resultado_mostrar as $datos) {
+                                if ($datos['categoria_producto_idcategoria_producto'] == 6) {
+                            ?>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                                <h4 class="card-title">
+                                                    <p><?php echo $datos['nombre_producto'] ?></p>
+                                                </h4>
+                                                <p><?php echo $datos['descripcion_producto'] ?></p>
+                                                <p>$<?php echo $datos['precio_producto'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+
+        </div>
 </body>
 
 </html

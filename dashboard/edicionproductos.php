@@ -142,21 +142,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     $Consultar_mostrar->execute();
                     $resultado_mostrar = $Consultar_mostrar->fetchAll();
                     //Imprimir var dump -> Arreglos u objetos
-                    //Captura de información
-                    if ($_POST) {
-                        $nombre = $_POST['nombre'];
-                        $descripcion = $_POST['descripcion'];
-                        $precio= $_POST['precio'];
-                        $foto = $_POST['foto'];
-                        //sentencia Sql
-                        $sql_insertar = "INSERT INTO producto (nombre_producto, descripcion_producto, precio_producto, foto_producto)VALUES (?,?,?,?)";
-                        //Preparar consulta
-                        $consulta_insertar = $pdo->prepare($sql_insertar);
-                        //Ejecutar la sentencia
-                        $consulta_insertar->execute(array($nombre, $descripcion, $precio, $foto));
-                        //Header redirecciona la pagina
-                        echo "<script> document.location.href='edicionproductos.php';</script>";
-                    }
+
                     //Mostrar o traer los campos del editar
                     if ($_GET) {
                         //Captura el id del usuario a editar
@@ -172,7 +158,6 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         //var_dump($resultado_editar);
                     }
                     ?>
-                    <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
@@ -181,157 +166,171 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <!---FORMULARIO DE REGISTRO-->
-                                    <?php if (!$_GET) { ?>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                                                    <div class="card card-signin my-5">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title text-center">Registrar productos</h5>
-                                                            <div align="center">
-                                                                <form action="" method="POST">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                                <div class="card card-signin my-5">
+                                                    <div class="card-body">
+                                                        <div align="center">
+                                                            <!---FORMULARIO DE REGISTRO-->
+                                                            <?php if (!$_GET) { ?>
+                                                                <h5 class="card-title text-center">Registro producto</h5>
+                                                                <form action="../upload.php" method="POST" enctype="multipart/form-data">
+                                                                    <br>
+                                                                    <input class="form-control" placeholder="Nombre" required autofocus type="text" name="nombre">
+                                                                    <br>
+                                                                    <input class="form-control" placeholder="Descripción" required autofocus type="text" name="descripcion">
+                                                                    <br>
+                                                                    <input class="form-control" placeholder="Precio" required autofocus type="text" name="precio">
+                                                                    <br>
+                                                                    <input class="form-control-file" placeholder="Foto" required autofocus type="file" name="file">
+                                                                    <br>
                                                                     <div class="form-label-group">
-                                                                        <input class="form-control" placeholder="Nombre" required autofocus type="text" name="nombre">
-                                                                        <br>
-                                                                        <input class="form-control" placeholder="Descripcion" required autofocus type="text" name="descripcion">
-                                                                        <br>
-                                                                        <input class="form-control" placeholder="Precio" required autofocus type="text" name="precio">
-                                                                        <br>
-                                                                        <input class="form-control-file" placeholder="Foto" required autofocus type="file" name="foto">
+                                                                        <select name="tiplato" class="form-control" required autofocus>
+                                                                            <option value="" disabled selected>Seleccione un tipo de plato</option>
+                                                                            <option value="1">Frutas</option>
+                                                                            <option value="2">Verduras</option>
+                                                                            <option value="3">Aseo</option>
+                                                                            <option value="4">Granos</option>
+                                                                            <option value="5">Lacteos</option>
+                                                                            <option value="6">Carnes frias</option>
+                                                                        </select>
                                                                         <br>
                                                                         <button class="btn btn-primary btn-xs" type="Submit">Registrar</button>
                                                                     </div>
                                                                 </form>
-                                                            </div>
+                                                            <?php } ?>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                </div>
-                            <?php } ?>
-                            <!---**************************** -->
-                            <!---Formulario para editar -->
-                            <?php if ($_GET) { ?>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                                            <div class="card card-signin my-5">
-                                                <div class="card-body">
-                                                    <h5 class="card-title text-center">Editar productos</h5>
-                                                    <div align="center">
-                                                        <form action="actualizar_productos.php" method="GET">
-                                                            <div class="form-label-group">
-                                                                <input class="form-control" placeholder="Nombre" required autofocus type="text" name="nombre" value="<?php echo $resultado_editar['nombre_producto']; ?>">
-                                                                <br>
-                                                                <input class="form-control" placeholder="Descripcion" required autofocus type="text" name="descripcion" value="<?php echo $resultado_editar['descripcion_producto']; ?>">
-                                                                <br>
-                                                                <input class="form-control" placeholder="Precio" required autofocus type="text" name="precio" value="<?php echo $resultado_editar['precio_producto']; ?>">
-                                                                <br>
-                                                                <input class="form-control-file" placeholder="Foto" required autofocus type="file" name="foto" value="<?php echo $resultado_editar['foto_producto']; ?>">
-                                                                <br>
-                                                                <input class="form-control" placeholder="id" required autofocus type="hidden" name="id_editar" value="<?php echo $resultado_editar['idproducto']; ?>">
-                                                                <br>
-                                                                <button class="btn btn-primary btn-xs" type="Submit">Editar</button>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                                            <div class="card card-signin my-5">
+                                                                <div class="card-body">
+                                                                    <div align="center">
+                                                                        <!---FORMULARIO DE EDITAR-->
+                                                                        <?php if ($_GET) { ?>
+                                                                            <h5 class="card-title text-center">Editar menú</h5>
+                                                                            <form action="actualizar_productos.php" method="GET">
+                                                                                <input class="form-control" placeholder="Nombre" required autofocus type="text" name="nombre" value="<?php echo $resultado_editar['nombre_producto']; ?>">
+                                                                                <br>
+                                                                                <input class="form-control" placeholder="Descripción" required autofocus type="text" name="descripcion" value="<?php echo $resultado_editar['descripcion_producto']; ?>">
+                                                                                <br>
+                                                                                <input class="form-control" placeholder="Precio" required autofocus type="text" name="precio" value="<?php echo $resultado_editar['precio_producto']; ?>">
+                                                                                <br>
+                                                                                <input class="form-control" placeholder="id" required autofocus type="hidden" name="id_editar" value="<?php echo $resultado_editar['idproducto']; ?>">
+                                                                                <br>
+                                                                                <button class="btn btn-primary btn-xs" type="Submit">Editar</button>
+                                                                            </form>
+                                                                        <?php } ?>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </form>
+                                                        </div>
                                                     </div>
+                                                    <br>
+                                                    <br>
+                                                    <!---**************************** -->
+                                                    <!---Tabla de menu -->
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr align="center">
+                                                                <th Style="border: 2px solid black">Plato</th>
+                                                                <th Style="border: 2px solid black">Descripción</th>
+                                                                <th Style="border: 2px solid black">Precio</th>
+                                                                <th Style="border: 2px solid black">Foto</th>
+                                                                <th Style="border: 2px solid black">Eliminar</th>
+                                                                <th Style="border: 2px solid black">Editar</th>
+                                                            <tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <?php foreach ($resultado_mostrar as $datos) { ?>
+                                                                <tr align="center">
+                                                                    <td Style="border: 2px solid black"><?php echo $datos['nombre_producto']; ?></td>
+                                                                    <td Style="border: 2px solid black"><?php echo $datos['descripcion_producto']; ?></td>
+                                                                    <td Style="border: 2px solid black"><?php echo $datos['precio_producto']; ?></td>
+                                                                    <td Style="border: 2px solid black"><?php echo $datos['foto_producto']; ?></td>
+                                                                    <td Style="border: 2px solid black"><a href="eliminar_producto.php?id=<?php echo $datos['idproducto']; ?>">
+                                                                            <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
+                                                                    <td Style="border: 2px solid black"><a href="edicionproductos.php?id=<?php echo $datos['idproducto']; ?>">
+                                                                            <button class="btn btn-primary btn-xs" type="submit">Editar</button></a></td>
+                                                                </tr>
+                                                            <?php } ?>
+
+                                                        </tbody>
+                                                    </table>
+                                                    </footer>
+                                                    <!-- End of Footer -->
+
                                                 </div>
+                                                <!-- End of Content Wrapper -->
+
                                             </div>
+                                            <!-- End of Page Wrapper -->
+                                            <!-- End of Footer -->
+
+                                        </div>
+                                        <!-- End of Content Wrapper -->
+
+                                    </div>
+                                    <!-- End of Page Wrapper -->
+                                    <!-- Footer -->
+                                    <footer class="sticky-footer bg-white">
+                                        <div class="container my-auto">
+                                            <div class="copyright text-center my-auto">
+                                                <span>Copyright &copy; Your Website 2020</span>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                    <!-- End of Footer -->
+
+                                </div>
+                                <!-- End of Content Wrapper -->
+
+                            </div>
+                            <!-- End of Page Wrapper -->
+
+                            <!-- Logout Modal-->
+                            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">Al seleccionar cerrar sesion, finaliza la sesión</div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                            <a class="btn btn-primary" href="../Controladores/Cerrar_Sesion.php">Cerrar sesion</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
-                        <!---**************************** -->
-                        <!---Tabla de restaurantes -->
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr align="center" Style="border: 2px solid black">
-                                        <th Style="border: 2px solid black">Nombre</th>
-                                        <th Style="border: 2px solid black">Descripción</th>
-                                        <th Style="border: 2px solid black">Precio</th>
-                                        <th Style="border: 2px solid black">Foto</th>
-                                        <th Style="border: 2px solid black">Eliminar</th>
-                                        <th Style="border: 2px solid black">Editar</th>
 
-                                    <tr>
+                            <!-- Bootstrap core JavaScript-->
+                            <script src="vendor/jquery/jquery.min.js"></script>
+                            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+                            <!-- Core plugin JavaScript-->
+                            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-                                </thead>
+                            <!-- Custom scripts for all pages-->
+                            <script src="js/sb-admin-2.min.js"></script>
 
-                                <tbody>
-                                    <?php foreach ($resultado_mostrar as $datos) { ?>
-                                        <tr align="center" Style="border: 2px solid black">
-                                            <td style="border: 2px solid black"><?php echo $datos['nombre_producto'] ?></td>
-                                            <td style="border: 2px solid black"><?php echo $datos['descripcion_producto'] ?></td>
-                                            <td style="border: 2px solid black"><?php echo $datos['precio_producto'] ?></td>
-                                            <td style="border: 2px solid black"><?php echo $datos['foto_producto'] ?></td>
-                                            <td style="border: 2px solid black"><a href="eliminar_producto.php?id=<?php echo $datos['idproducto']; ?>">
-                                                    <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
-                                            <td style="border: 2px solid black"><a href="edicionproductos.php?id=<?php echo $datos['idproducto']; ?>">
-                                                    <button class="btn btn-primary btn-xs" type="submit">Editar</button></a></td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    <?php } ?>
-                        </div>
-                    </div>
-                </div>
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; Your Website 2020</span>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End of Footer -->
+                            <!-- Page level plugins -->
+                            <script src="vendor/chart.js/Chart.min.js"></script>
 
-                </div>
-                <!-- End of Content Wrapper -->
-
-            </div>
-            <!-- End of Page Wrapper -->
-
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">Al seleccionar cerrar sesion, finaliza la sesión</div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="../Controladores/Cerrar_Sesion.php">Cerrar sesion</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
-
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
+                            <!-- Page level custom scripts -->
+                            <script src="js/demo/chart-area-demo.js"></script>
+                            <script src="js/demo/chart-pie-demo.js"></script>
 
     </body>
 

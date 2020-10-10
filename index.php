@@ -44,7 +44,7 @@
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" style="border-radius: 100%" src="fruta.png" alt="">
             <!-- Masthead Heading-->
-            <h1 class="masthead-heading mb-0"> Abarrotes y Legumbres Fruta fresca </h1>
+            <h1 class="masthead-heading mb-0"> Abarrotes y Legumbres Fruta fresca </h1>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -229,7 +229,8 @@
     $resultado_mostrar = $Consultar_mostrar->fetchAll();
     ?>
     <!-- Contact Section Heading-->
-    <?php foreach ($resultado_mostrar as $datos) { ?>
+    <?php foreach ($resultado_mostrar as $datos) { 
+        ?>
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
