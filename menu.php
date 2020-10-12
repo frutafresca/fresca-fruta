@@ -83,6 +83,16 @@
                                                 </h4>
                                                 <p><?php echo $datos['descripcion_producto'] ?></p>
                                                 <p>$<?php echo $datos['precio_producto'] ?></p>
+                                                <?php
+                                                if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
+                                                    <center>
+                                                        <br>
+                                                        <a href="Usuario/iniciar sesion.php">
+                                                            <button class="btn btn-primary btn-xs" type="submit">Comprar producto</button></a>
+                                                        <br>
+                                                    </center>
+                                                <?php }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -113,6 +123,17 @@
                                                 <p><?php echo $datos['descripcion_producto'] ?></p>
                                                 <p>$<?php echo $datos['precio_producto'] ?></p>
                                             </div>
+                                            <?php
+                                            if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
+                                            ?>
+                                                <center>
+                                                    <br>
+                                                    <a href="Usuario/iniciar sesion.php">
+                                                        <button class="btn btn-primary btn-xs" type="submit">Comprar producto</button></a>
+                                                    <br>
+                                                </center>
+                                            <?php }
+                                            ?>
                                         </div>
                                     </div>
                             <?php
@@ -142,6 +163,17 @@
                                                 </h4>
                                                 <p><?php echo $datos['descripcion_producto'] ?></p>
                                                 <p>$<?php echo $datos['precio_producto'] ?></p>
+                                                <?php
+                                                if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
+                                                ?>
+                                                    <center>
+                                                        <br>
+                                                        <a href="Usuario/iniciar sesion.php">
+                                                            <button class="btn btn-primary btn-xs" type="submit">Comprar producto</button></a>
+                                                        <br>
+                                                    </center>
+                                                <?php }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -172,6 +204,17 @@
                                                 </h4>
                                                 <p><?php echo $datos['descripcion_producto'] ?></p>
                                                 <p>$<?php echo $datos['precio_producto'] ?></p>
+                                                <?php
+                                                if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
+                                                ?>
+                                                    <center>
+                                                        <br>
+                                                        <a href="Usuario/iniciar sesion.php">
+                                                            <button class="btn btn-primary btn-xs" type="submit">Comprar producto</button></a>
+                                                        <br>
+                                                    </center>
+                                                <?php }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -202,6 +245,16 @@
                                                 </h4>
                                                 <p><?php echo $datos['descripcion_producto'] ?></p>
                                                 <p>$<?php echo $datos['precio_producto'] ?></p>
+                                                <?php
+                                                if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
+                                                    <center>
+                                                        <br>
+                                                        <a href="Usuario/iniciar sesion.php">
+                                                            <button class="btn btn-primary btn-xs" type="submit">Comprar producto</button></a>
+                                                        <br>
+                                                    </center>
+                                                <?php }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -232,6 +285,16 @@
                                                 </h4>
                                                 <p><?php echo $datos['descripcion_producto'] ?></p>
                                                 <p>$<?php echo $datos['precio_producto'] ?></p>
+                                                <?php
+                                                if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
+                                                    <center>
+                                                        <br>
+                                                        <a href="Usuario/iniciar sesion.php">
+                                                            <button class="btn btn-primary btn-xs" type="submit">Comprar producto</button></a>
+                                                        <br>
+                                                    </center>
+                                                <?php }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -245,6 +308,26 @@
                     <!-- /.container -->
 
         </div>
+        <?php
+        if (!isset($_SESSION["correo_usu"]) or !isset($_SESSION["idusuario"])) { ?>
+            <center> Si quieres comprar debes
+                <br>
+                <a href="Usuario/iniciar sesion.php">
+                    <button class="btn btn-primary btn-xs" type="submit">Iniciar sesion</button></a>
+                <br>
+                o
+                <br>
+                <a href="Usuario/registro.php">
+                    <button class="btn btn-primary btn-xs" type="submit">Registrarse</button></a>
+            </center>
+        <?php }
+        ?>
+        <!-- SCRIPTS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        <script src="./tienda.js"></script>
 </body>
 
 </html

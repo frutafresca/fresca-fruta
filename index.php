@@ -229,8 +229,9 @@
     $resultado_mostrar = $Consultar_mostrar->fetchAll();
     ?>
     <!-- Contact Section Heading-->
-    <?php foreach ($resultado_mostrar as $datos) { 
-        ?>
+
+    <?php foreach ($resultado_mostrar as $datos) {
+    ?>
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
