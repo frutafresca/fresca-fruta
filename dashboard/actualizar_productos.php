@@ -11,6 +11,6 @@ $sql_actualizar = "UPDATE producto SET nombre_producto=?,descripcion_producto=?,
 //Preparar la consulta
 $consultar_actualizar = $pdo->prepare($sql_actualizar);
 //Ejecutar
-$consultar_actualizar->execute(array($nombre, $descripcion, $precio, $foto,$id));
+$consultar_actualizar->execute(array($nombre, $descripcion, $precio, $id));
 //Redireccionar
 header('location:edicionproductos.php');
