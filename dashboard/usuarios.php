@@ -134,49 +134,66 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
           <?php
           //Llamar a la conexion base de datos
           include_once '../dao/conexion.php';
-
-          // mostrar los datis de la bd
-
+          //Mostrar los datos almacenados
           $sql_mostrar = "SELECT * FROM tbl_usuario";
-          // preparar la sentencia 
-          $consulta_mostrar = $pdo->prepare($sql_mostrar);
-          //ejecutar la consulta 
-          $consulta_mostrar->execute();
-          $resultado_mostrar = $consulta_mostrar->fetchAll();
+          //Prepara sentencia
+          $Consultar_mostrar = $pdo->prepare($sql_mostrar);
+          //Ejecutar consulta
+          $Consultar_mostrar->execute();
+          $resultado_mostrar = $Consultar_mostrar->fetchAll();
+          //Imprimir var dump -> Arreglos u objetos
           ?>
+          <div class="container-fluid">
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h4 align="center" class="m-0 font-weight-bold text-primary">Información de usuarios</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <br>
+                  <br>
+                  <!---**************************** -->
+                  <!---Tabla de menu -->
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr align="center">
+                        <th Style="border: 2px solid black">Nombre</th>
+                        <th Style="border: 2px solid black">Apellido</th>
+                        <th Style="border: 2px solid black">Correo</th>
+                        <th Style="border: 2px solid black">Telefono</th>
+                        <th Style="border: 2px solid black">Eliminar</th>
+                      <tr>
+                    </thead>
 
-          <!-- tabla usuario-->
-          <table>
-            <thead>
-              <tr style="border: 1px solid black">
-                <td style="border: 1px solid black">Nombre</td>
-                <td style="border: 1px solid black">Apellido</td>
-                <td style="border: 1px solid black">Cédula</td>
-                <td style="border: 1px solid black">Telefono</td>
-                <td style="border: 1px solid black">Correo</td>
-                <td style="border: 1px solid black">Contraseña</td>
-                <td style="border: 1px solid black">Acciones</td>
+                    <tbody>
+                      <?php foreach ($resultado_mostrar as $datos) { ?>
+                        <tr align="center">
+                          <td Style="border: 2px solid black"><?php echo $datos['nombre_usu']; ?></td>
+                          <td Style="border: 2px solid black"><?php echo $datos['apellido_usu']; ?></td>
+                          <td Style="border: 2px solid black"><?php echo $datos['correo_usu']; ?></td>
+                          <td Style="border: 2px solid black"><?php echo $datos['telefono_usu']; ?></td>
+                          <td Style="border: 2px solid black"><a href="eliminar_usuario.php?id=<?php echo $datos['idusuario']; ?>">
+                              <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
+                      <?php } ?>
 
-              </tr>
-            </thead>
-            <tbody>
+                    </tbody>
+                  </table>
+                  </footer>
+                  <!-- End of Footer -->
 
-              <?php foreach ($resultado_mostrar as $datos) : ?>
+                </div>
+                <!-- End of Content Wrapper -->
 
-                <tr style="border: 1px solid black">
-                  <td style="border: 1px solid black"><?php echo $datos['nombre_usu'] ?> </td>
-                  <td style="border: 1px solid black"><?php echo $datos['apellido_usu'] ?> </td>
-                  <td style="border: 1px solid black"><?php echo $datos['cedula_usu'] ?> </td>
-                  <td style="border: 1px solid black"><?php echo $datos['telefono_usu'] ?> </td>
-                  <td style="border: 1px solid black"><?php echo $datos['correo_usu'] ?> </td>
-                  <td style="border: 1px solid black"><?php echo $datos['contrasena_usu'] ?> </td>
-                  <td style="border: 1px solid black"><a href="../eliminar.php?id=<?php echo $datos['idusuario'] ?> "><button type="submit">Eliminar</button></a></td>
+              </div>
+              <!-- End of Page Wrapper -->
+              <!-- End of Footer -->
 
-                </tr>
-              <?php endforeach ?>
-            </tbody>
-          </table>
+            </div>
+            <!-- End of Content Wrapper -->
 
+          </div>
+          <!-- End of Page Wrapper -->
           <!-- Footer -->
           <footer class="sticky-footer bg-white">
             <div class="container my-auto">
