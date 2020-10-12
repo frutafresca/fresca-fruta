@@ -34,7 +34,7 @@ session_start();
         echo "<script> document.location.href='../dashboard/index.php';</script>";
       } else {
         if ($rol_prueba == 2) {
-          echo "<script> document.location.href='../productos.php';</script>";
+          echo "<script> document.location.href='../comprar.php';</script>";
         } 
       }
     } else {

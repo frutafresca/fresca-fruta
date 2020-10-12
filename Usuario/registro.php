@@ -61,7 +61,7 @@ if ($_POST) {
 
 </head>
 
-<body style="background-color: rgb(255, 227, 203);">
+<body style="background-color: #8DE525">
   <?php require_once '../Navbar/navbar_invi.php'; ?>
   <br>
   <br>

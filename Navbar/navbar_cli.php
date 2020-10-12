@@ -23,7 +23,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
-<body id="page-top" style="background-color: rgb(255, 227, 203);">
+<body id="page-top" style="background-color: #8DE525">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" background-color=#010304;>
         <div class="container">
             <img width="120" src="#" alt="">

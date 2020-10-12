@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="../frutafresca/css/letra.css">
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
-<body id="page-top" style="background-color: rgb(255, 227, 203);">
+<body id="page-top" style="background-color: #8DE525">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" background-color=#010304;>
         <div class="container">
             <img width="120" src="#" alt="">
