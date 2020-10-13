@@ -75,7 +75,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #8DE525;
+    color: #413;
     text-align: left;
     background-color: #fff;
 }
@@ -181,7 +181,7 @@ a {
 }
 
 a:hover {
-    color: #224abe;
+    color: #413;
     text-decoration: underline;
 }
 
@@ -231,7 +231,7 @@ table {
 caption {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    color: #8DE525;
+    color: #413;
     text-align: left;
     caption-side: bottom;
 }
@@ -501,7 +501,7 @@ mark,
 .blockquote-footer {
     display: block;
     font-size: 80%;
-    color: #8DE525;
+    color: #413;
 }
 
 .blockquote-footer::before {
@@ -533,7 +533,7 @@ mark,
 
 .figure-caption {
     font-size: 90%;
-    color: #8DE525;
+    color: #413;
 }
 
 code {
@@ -1627,7 +1627,7 @@ pre code {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #8DE525;
+    color: #413;
 }
 
 .table th,
@@ -1677,7 +1677,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-    color: #8DE525;
+    color: #413;
     background-color: rgba(0, 0, 0, 0.075);
 }
 
@@ -2008,27 +2008,27 @@ pre code {
 }
 
 .form-control::-webkit-input-placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1;
 }
 
 .form-control::-moz-placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1;
 }
 
 .form-control::-ms-input-placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1;
 }
 
 .form-control::placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1;
 }
 
@@ -2087,7 +2087,7 @@ select.form-control:focus::-ms-value {
     margin-bottom: 0;
     font-size: 1rem;
     line-height: 1.5;
-    color: #8DE525;
+    color: #413;
     background-color: transparent;
     border: solid transparent;
     border-width: 1px 0;
@@ -2160,7 +2160,7 @@ textarea.form-control {
 
 .form-check-input[disabled]~.form-check-label,
 .form-check-input:disabled~.form-check-label {
-    color: #8DE525;
+    color: #413;
 }
 
 .form-check-label {
@@ -2471,7 +2471,7 @@ textarea.form-control.is-invalid {
 .btn {
     display: inline-block;
     font-weight: 400;
-    color: #8DE525;
+    color: #413;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -2494,7 +2494,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-    color: #8DE525;
+    color: #413;
     text-decoration: none;
 }
 
@@ -2883,7 +2883,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-    color: #8DE525;
+    color: #413;
     border-color: #000000;
 }
 
@@ -2900,7 +2900,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-secondary.disabled,
 .btn-outline-secondary:disabled {
-    color: #8DE525;
+    color: #413;
     background-color: transparent;
 }
 
@@ -3152,7 +3152,7 @@ fieldset:disabled a.btn {
 
 .btn-link:disabled,
 .btn-link.disabled {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
 }
 
@@ -3255,7 +3255,7 @@ input[type="button"].btn-block {
     padding: 0.5rem 0;
     margin: 0.125rem 0 0;
     font-size: 0.85rem;
-    color: #8DE525;
+    color: #413;
     text-align: left;
     list-style: none;
     background-color: #fff;
@@ -3448,7 +3448,7 @@ input[type="button"].btn-block {
 
 .dropdown-item.disabled,
 .dropdown-item:disabled {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
     background-color: transparent;
 }
@@ -3462,7 +3462,7 @@ input[type="button"].btn-block {
     padding: 0.5rem 1.5rem;
     margin-bottom: 0;
     font-size: 0.875rem;
-    color: #8DE525;
+    color: #413;
     white-space: nowrap;
 }
 
@@ -3825,7 +3825,7 @@ input[type="button"].btn-block {
 
 .custom-control-input[disabled]~.custom-control-label,
 .custom-control-input:disabled~.custom-control-label {
-    color: #8DE525;
+    color: #413;
 }
 
 .custom-control-input[disabled]~.custom-control-label::before,
@@ -3973,7 +3973,7 @@ input[type="button"].btn-block {
 }
 
 .custom-select:disabled {
-    color: #8DE525;
+    color: #413;
     background-color: #eaecf4;
 }
 
@@ -4266,7 +4266,7 @@ input[type="button"].btn-block {
 }
 
 .nav-link.disabled {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
     cursor: default;
 }
@@ -4291,7 +4291,7 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs .nav-link.disabled {
-    color: #8DE525;
+    color: #413;
     background-color: transparent;
     border-color: transparent;
 }
@@ -5000,7 +5000,7 @@ input[type="button"].btn-block {
 .breadcrumb-item+.breadcrumb-item::before {
     display: inline-block;
     padding-right: 0.5rem;
-    color: #8DE525;
+    color: #413;
     content: "/";
 }
 
@@ -5013,7 +5013,7 @@ input[type="button"].btn-block {
 }
 
 .breadcrumb-item.active {
-    color: #8DE525;
+    color: #413;
 }
 
 .pagination {
@@ -5067,7 +5067,7 @@ input[type="button"].btn-block {
 }
 
 .page-item.disabled .page-link {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
     cursor: auto;
     background-color: #fff;
@@ -5535,7 +5535,7 @@ a.badge-dark.focus {
 }
 
 .list-group-item-action:active {
-    color: #8DE525;
+    color: #413;
     background-color: #eaecf4;
 }
 
@@ -5559,7 +5559,7 @@ a.badge-dark.focus {
 
 .list-group-item.disabled,
 .list-group-item:disabled {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
     background-color: #fff;
 }
@@ -5921,7 +5921,7 @@ a.close.disabled {
     display: flex;
     align-items: center;
     padding: 0.25rem 0.75rem;
-    color: #8DE525;
+    color: #413;
     background-color: rgba(255, 255, 255, 0.85);
     background-clip: padding-box;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -6443,7 +6443,7 @@ a.close.disabled {
 
 .popover-body {
     padding: 0.5rem 0.75rem;
-    color: #8DE525;
+    color: #413;
 }
 
 .carousel {
@@ -10652,7 +10652,7 @@ a:focus {
 }
 
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:active {
-    color: #8DE525;
+    color: #413;
 }
 
 .sidebar {
@@ -10942,7 +10942,7 @@ a:focus {
 }
 
 .sidebar-light .nav-item .nav-link {
-    color: #8DE525;
+    color: #413;
 }
 
 .sidebar-light .nav-item .nav-link i {

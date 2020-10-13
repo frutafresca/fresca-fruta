@@ -1,6 +1,6 @@
 <?php 
 // llamada a la conexion 
-include_once 'dao/conexion.php';
+include_once '../dao/conexion.php';
 $id =$_GET['id'];
 
 //sentencia sql para eliminar 

@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="../css/letra1.css">
     <link rel="stylesheet" href="../css/letra2.css">
     <link href="../css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/iniciosesion.css">
     <link rel="stylesheet" href="../css/letra.css">
     <link rel="stylesheet" href="../Classdiamond2/css/fuentesplaz.css">
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/bootstrap.js"></script>
+
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
 </head>
@@ -54,7 +55,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-9 col-lg-8 mx-auto">
-                                <p>Iniciar sesión</p>
+                                <center><b><p>Iniciar sesión, Fruta fresca</p></b></center>
                                 <form action="../Controladores/iniciar_Sesion.php" method="POST">
                                     <div class="form-label-group">
                                         <input type="email" id="inputEmail" name="correo" class="form-control" placeholder="Correo" required autofocus>

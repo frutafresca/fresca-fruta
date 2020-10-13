@@ -187,7 +187,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                                     <br>
                                                                     <div class="form-label-group">
                                                                         <select name="tiplato" class="form-control" required autofocus>
-                                                                            <option value="" disabled selected>Seleccione un tipo de plato</option>
+                                                                            <option value="" disabled selected>Seleccione un tipo de producto</option>
                                                                             <option value="1">Frutas</option>
                                                                             <option value="2">Verduras</option>
                                                                             <option value="3">Aseo</option>
@@ -240,7 +240,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                     <table class="table table-bordered">
                                                         <thead>
                                                             <tr align="center">
-                                                                <th Style="border: 2px solid black">Plato</th>
+                                                                <th Style="border: 2px solid black">Producto</th>
                                                                 <th Style="border: 2px solid black">Descripción</th>
                                                                 <th Style="border: 2px solid black">Precio</th>
                                                                 <th Style="border: 2px solid black">Foto</th>

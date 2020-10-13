@@ -75,7 +75,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #8DE525;
+    color: #413;
     text-align: left;
     background-color: #fff
 }
@@ -231,7 +231,7 @@ table {
 caption {
     padding-top: .75rem;
     padding-bottom: .75rem;
-    color: #8DE525;
+    color: #413;
     text-align: left;
     caption-side: bottom
 }
@@ -1677,7 +1677,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-    color: #8DE525;
+    color: #413;
     background-color: rgba(0, 0, 0, .075)
 }
 
@@ -2008,27 +2008,27 @@ pre code {
 }
 
 .form-control::-webkit-input-placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1
 }
 
 .form-control::-moz-placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1
 }
 
 .form-control:-ms-input-placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1
 }
 
 .form-control::-ms-input-placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1
 }
 
 .form-control::placeholder {
-    color: #8DE525;
+    color: #413;
     opacity: 1
 }
 
@@ -2087,7 +2087,7 @@ select.form-control:focus::-ms-value {
     margin-bottom: 0;
     font-size: 1rem;
     line-height: 1.5;
-    color: #8DE525;
+    color: #413;
     background-color: transparent;
     border: solid transparent;
     border-width: 1px 0
@@ -2471,7 +2471,7 @@ textarea.form-control.is-invalid {
 .btn {
     display: inline-block;
     font-weight: 400;
-    color: #8DE525;
+    color: #413;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -2494,7 +2494,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-    color: #8DE525;
+    color: #413;
     text-decoration: none
 }
 
@@ -2882,7 +2882,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-    color: #8DE525;
+    color: #413;
     border-color: #000000
 }
 
@@ -2899,7 +2899,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-secondary.disabled,
 .btn-outline-secondary:disabled {
-    color: #8DE525;
+    color: #413;
     background-color: transparent
 }
 
@@ -3151,7 +3151,7 @@ fieldset:disabled a.btn {
 
 .btn-link.disabled,
 .btn-link:disabled {
-    color: #8DE525;
+    color: #413;
     pointer-events: none
 }
 
@@ -3254,7 +3254,7 @@ input[type=submit].btn-block {
     padding: .5rem 0;
     margin: .125rem 0 0;
     font-size: .85rem;
-    color: #8DE525;
+    color: #413;
     text-align: left;
     list-style: none;
     background-color: #fff;
@@ -3447,7 +3447,7 @@ input[type=submit].btn-block {
 
 .dropdown-item.disabled,
 .dropdown-item:disabled {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
     background-color: transparent
 }
@@ -3461,7 +3461,7 @@ input[type=submit].btn-block {
     padding: .5rem 1.5rem;
     margin-bottom: 0;
     font-size: .875rem;
-    color: #8DE525;
+    color: #413;
     white-space: nowrap
 }
 
@@ -3972,7 +3972,7 @@ input[type=submit].btn-block {
 }
 
 .custom-select:disabled {
-    color: #8DE525;
+    color: #413;
     background-color: #eaecf4
 }
 
@@ -4265,7 +4265,7 @@ input[type=submit].btn-block {
 }
 
 .nav-link.disabled {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
     cursor: default
 }
@@ -4290,7 +4290,7 @@ input[type=submit].btn-block {
 }
 
 .nav-tabs .nav-link.disabled {
-    color: #8DE525;
+    color: #413;
     background-color: transparent;
     border-color: transparent
 }
@@ -4999,7 +4999,7 @@ input[type=submit].btn-block {
 .breadcrumb-item+.breadcrumb-item::before {
     display: inline-block;
     padding-right: .5rem;
-    color: #8DE525;
+    color: #413;
     content: "/"
 }
 
@@ -5066,7 +5066,7 @@ input[type=submit].btn-block {
 }
 
 .page-item.disabled .page-link {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
     cursor: auto;
     background-color: #fff;
@@ -5534,7 +5534,7 @@ a.badge-dark:focus {
 }
 
 .list-group-item-action:active {
-    color: #8DE525;
+    color: #413;
     background-color: #eaecf4
 }
 
@@ -5558,7 +5558,7 @@ a.badge-dark:focus {
 
 .list-group-item.disabled,
 .list-group-item:disabled {
-    color: #8DE525;
+    color: #413;
     pointer-events: none;
     background-color: #fff
 }
@@ -5920,7 +5920,7 @@ a.close.disabled {
     display: flex;
     align-items: center;
     padding: .25rem .75rem;
-    color: #8DE525;
+    color: #413;
     background-color: rgba(255, 255, 255, .85);
     background-clip: padding-box;
     border-bottom: 1px solid rgba(0, 0, 0, .05)

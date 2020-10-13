@@ -63,10 +63,9 @@
                         <u><a class="nav-link" href="#item-6">Carnes frias</a></u>
                     </div>
                 </div>
-                <center>
 
                     <p id="item-5"></p><br><br><br>
-                    <p class="tituloplaz" align="center">Frutas</p>
+                    <b><p class="tituloplaz" align="center">Frutas</p></b>
                     <p class="pplaz"></p>
 
                     <div class="container">
@@ -96,7 +95,7 @@
                     <!-- /.container -->
 
                     <p id="item-1"></p><br><br>
-                    <p class="tituloplaz" align="center">Verduras</p>
+                    <b><p align="center">Verduras</p></b>
                     <!-- Page Content -->
                     <div class="container">
                         <div class="row">
@@ -125,7 +124,7 @@
                     <!-- /.container -->
 
                     <p id="item-2"></p><br><br>
-                    <p align="center">Aseo</p>
+                    <b><p align="center">Aseo</p></b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -155,7 +154,7 @@
                     <!-- /.container -->
 
                     <p id="item-3"></p><br><br>
-                    <p class="tituloplaz" align="center">Granos</p>
+                    <b><p align="center">Granos</p></b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -185,7 +184,7 @@
                     <!-- /.container -->
 
                     <p id="item-4"></p><br><br>
-                    <p align="center">Lacteos</p>
+                    <b><p align="center">Lacteos</p></b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -215,7 +214,7 @@
                     <!-- /.container -->
 
                     <p id="item-6"></p><br><br>
-                    <p class="tituloplaz" align="center">Carnes frias</p>
+                    <b><p align="center">Carnes frias</p></b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
