@@ -14,7 +14,7 @@ $checarsiimagen = getimagesize($_FILES['file']['tmp_name']);
 if ($checarsiimagen != false) {
     $size = $_FILES['file']['size'];
     //Validando tamano del archivo
-    if ($size > 700000) {
+    if ($size > 700000*3024*3024) {
         echo "El archivo excede el limite, debe ser menor de 700kb";
     } else {
         if ($tipo_archivo == 'jpg' || $tipo_archivo == 'jpeg' || $tipo_archivo == 'png') {

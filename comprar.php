@@ -9,7 +9,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../frutafresca/js/all.js"></script>
+        <script src="frutafresca/js/all.js"></script>
         <link rel="stylesheet" href="../frutafresca/css/letra1.css">
         <link rel="stylesheet" href="../frutafresca/css/letra2.css">
         <link rel="stylesheet" href="../frutafresca/css/estiloss.css">
@@ -62,7 +62,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                 <br>
                 <center>
                     <div class="card" style="width: 18rem;">
-                        <div class="card-body">
+                        <div class="card-body" style="background-color: #ffffff;">
                             <b>
                                 <p>Categorias</p>
                             </b>
@@ -76,7 +76,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     </div>
 
                     <p id="item-5"></p><br><br><br>
-                    <p class="tituloplaz" align="center">Frutas</p>
+                    <b><p align="center">Frutas</p></b>
                     <div class="container">
                         <div class="row">
                             <?php foreach ($resultado_mostrar as $datos) {
@@ -84,7 +84,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             ?>
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color: #ffffff;">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -115,7 +115,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-1"></p><br><br>
-                    <p class="tituloplaz" align="center">Verduras</p>
+                    <b><p align="center">Verduras</p></b>
                     <!-- Page Content -->
                     <div class="container">
                         <div class="row">
@@ -124,7 +124,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             ?>
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color: #ffffff;">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -155,7 +155,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-2"></p><br><br>
-                    <p align="center">Aseo</p>
+                    <b><p align="center">Aseo</p></b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -165,7 +165,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             ?>
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color: #ffffff;">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -196,7 +196,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-3"></p><br><br>
-                    <p class="tituloplaz" align="center">Granos</p>
+                    <b><p class="tituloplaz" align="center">Granos</p></b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -206,7 +206,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             ?>
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color: #ffffff;">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -237,7 +237,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-4"></p><br><br>
-                    <p align="center">Lacteos</p>
+                    <b><p align="center">Lacteos</p></b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -247,7 +247,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             ?>
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color: #ffffff;">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -278,7 +278,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-6"></p><br><br>
-                    <p class="tituloplaz" align="center">Carnes frias</p>
+                    <b><p class="tituloplaz" align="center">Carnes frias</p></b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -288,7 +288,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             ?>
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color: #ffffff;">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -317,22 +317,8 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         <!-- /.row -->
                     </div>
                     <!-- /.container -->
-
-            </div>
-            <?php
-            if (!isset($_SESSION["correo_usu"]) or !isset($_SESSION["idusuario"])) { ?>
-                <center> Si quieres comprar debes
-                    <br>
-                    <a href="Usuario/iniciar sesion.php">
-                        <button class="btn btn-primary btn-xs" type="submit">Iniciar sesion</button></a>
-                    <br>
-                    o
-                    <br>
-                    <a href="Usuario/registro.php">
-                        <button class="btn btn-primary btn-xs" type="submit">Registrarse</button></a>
                 </center>
-            <?php }
-            ?>
+            </div>
 
             <!-- END SECTION STORE -->
             <!-- START SECTION SHOPPING CART -->

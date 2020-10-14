@@ -35,10 +35,9 @@ if ($_POST) {
     //Preparar consulta
     $consulta_insertar = $pdo->prepare($sql_insertar);
     //Ejecutar la sentencia
-    $consulta_insertar->execute(array($nombre, $apellido, $cedula, $telefono, $correo, $contrasena,$roles));
+    $consulta_insertar->execute(array($nombre, $apellido, $cedula, $telefono, $correo, $contrasena, $roles));
     echo "<script>alert('Datos almacenados correctamente');</script>";
-    // refrescar pagina 
-    header('location:registro.php');
+    echo "<script> document.location.href='../Usuario/iniciar sesion.php';</script>";
   }
 }
 ?>
@@ -136,4 +135,5 @@ if ($_POST) {
   <script src="js/scripts.js"></script>
 
 </body>
+
 </html>
