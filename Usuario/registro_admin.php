@@ -1,6 +1,7 @@
 <?php
 //Llamar a la conexion base de datos
 include_once '../dao/conexion.php';
+
 //Captura de información
 if ($_POST) {
   $nombre = $_POST['nombre'];
@@ -72,11 +73,11 @@ if ($_POST) {
                 <label for="inputApellido">Apellido</label>
               </div>
               <div class="form-label-group">
-                <input type="number" id="inputCedula" name="cedula" class="form-control" placeholder="Cédula" required autofocus>
+                <input type="text" id="inputCedula" name="cedula" class="form-control" placeholder="Cédula" required autofocus>
                 <label for="inputCedula">Cédula</label>
               </div>
               <div class="form-label-group">
-                <input type="number" id="inputTelefono" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
+                <input type="text" id="inputTelefono" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
                 <label for="inputTelefono">Telefono</label>
               </div>
               <div class="form-label-group">
@@ -84,12 +85,12 @@ if ($_POST) {
                 <label for="inputEmail">Correo</label>
               </div>
               <div class="form-label-group">
-                <input type="password" id="inputPassword" name="contrasena" class="form-control" placeholder="Contraseña" maxlength="15" required>
+                <input type="password" id="inputPassword" name="contrasena" class="form-control" placeholder="Contraseña" min="5" maxlength="15" required>
                 <label for="inputPassword">Contraseña</label>
               </div>
               <div class="form-label-group">
                 <select name="roles" class="form-control" required autofocus>
-                  <option value="2">Cliente</option>
+                  <option value="1">Administrador</option>
                 </select>
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarse</button>

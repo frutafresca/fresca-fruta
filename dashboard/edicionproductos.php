@@ -237,28 +237,28 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                     <br>
                                                     <!---**************************** -->
                                                     <!---Tabla de menu -->
-                                                    <table class="table table-bordered">
-                                                        <thead>
+                                                    <table class="table">
+                                                        <thead class="thead-dark">
                                                             <tr align="center">
-                                                                <th Style="border: 2px solid black">Producto</th>
-                                                                <th Style="border: 2px solid black">Descripción</th>
-                                                                <th Style="border: 2px solid black">Precio</th>
-                                                                <th Style="border: 2px solid black">Foto</th>
-                                                                <th Style="border: 2px solid black">Eliminar</th>
-                                                                <th Style="border: 2px solid black">Editar</th>
+                                                                <th scope="col">Producto</th>
+                                                                <th scope="col">Descripción</th>
+                                                                <th scope="col">Precio</th>
+                                                                <th scope="col">Foto</th>
+                                                                <th scope="col">Eliminar</th>
+                                                                <th scope="col">Editar</th>
                                                             <tr>
                                                         </thead>
 
                                                         <tbody>
                                                             <?php foreach ($resultado_mostrar as $datos) { ?>
                                                                 <tr align="center">
-                                                                    <td Style="border: 2px solid black"><?php echo $datos['nombre_producto']; ?></td>
-                                                                    <td Style="border: 2px solid black"><?php echo $datos['descripcion_producto']; ?></td>
-                                                                    <td Style="border: 2px solid black"><?php echo $datos['precio_producto']; ?></td>
-                                                                    <td Style="border: 2px solid black"><?php echo $datos['foto_producto']; ?></td>
-                                                                    <td Style="border: 2px solid black"><a href="eliminar_producto.php?id=<?php echo $datos['idproducto']; ?>">
+                                                                    <td scope="col"><?php echo $datos['nombre_producto']; ?></td>
+                                                                    <td scope="col"><?php echo $datos['descripcion_producto']; ?></td>
+                                                                    <td scope="col"><?php echo $datos['precio_producto']; ?></td>
+                                                                    <td scope="col"><?php echo $datos['foto_producto']; ?></td>
+                                                                    <td scope="col"><a href="eliminar_producto.php?id=<?php echo $datos['idproducto']; ?>">
                                                                             <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
-                                                                    <td Style="border: 2px solid black"><a href="edicionproductos.php?id=<?php echo $datos['idproducto']; ?>">
+                                                                    <td scope="col"><a href="edicionproductos.php?id=<?php echo $datos['idproducto']; ?>">
                                                                             <button class="btn btn-primary btn-xs" type="submit">Editar</button></a></td>
                                                                 </tr>
                                                             <?php } ?>

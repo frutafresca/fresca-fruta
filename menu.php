@@ -66,9 +66,9 @@
 
                 <p id="item-5"></p><br><br><br>
                 <b>
-                    <p class="tituloplaz" align="center">Frutas</p>
+                    <p align="center">Frutas</p>
                 </b>
-                <p class="pplaz"></p>
+                <p></p>
 
                 <div class="container">
                     <div class="row">

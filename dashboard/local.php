@@ -249,15 +249,15 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         <!---**************************** -->
                         <!---Tabla de restaurantes -->
                         <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr align="center" Style="border: 2px solid black">
-                                        <th Style="border: 2px solid black">Nombre</th>
-                                        <th Style="border: 2px solid black">Dirección</th>
-                                        <th Style="border: 2px solid black">Telefono</th>
-                                        <th Style="border: 2px solid black">Correo</th>
-                                        <th Style="border: 2px solid black">Eliminar</th>
-                                        <th Style="border: 2px solid black">Editar</th>
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr align="center" scope="col">
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Dirección</th>
+                                        <th scope="col">Telefono</th>
+                                        <th scope="col">Correo</th>
+                                        <th scope="col">Eliminar</th>
+                                        <th scope="col">Editar</th>
 
                                     <tr>
 
@@ -266,14 +266,14 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
 
                                 <tbody>
                                     <?php foreach ($resultado_mostrar as $datos) { ?>
-                                        <tr align="center" Style="border: 2px solid black">
-                                            <td style="border: 2px solid black"><?php echo $datos['nombre_negocio'] ?></td>
-                                            <td style="border: 2px solid black"><?php echo $datos['direccion_negocio'] ?></td>
-                                            <td style="border: 2px solid black"><?php echo $datos['telefono_negocio'] ?></td>
-                                            <td style="border: 2px solid black"><?php echo $datos['correo_negocio'] ?></td>
-                                            <td style="border: 2px solid black"><a href="eliminar_negocio.php?id=<?php echo $datos['idnegocio']; ?>">
+                                        <tr align="center" scope="col">
+                                            <td scope="col"><?php echo $datos['nombre_negocio'] ?></td>
+                                            <td scope="col"><?php echo $datos['direccion_negocio'] ?></td>
+                                            <td scope="col"><?php echo $datos['telefono_negocio'] ?></td>
+                                            <td scope="col"><?php echo $datos['correo_negocio'] ?></td>
+                                            <td scope="col"><a href="eliminar_negocio.php?id=<?php echo $datos['idnegocio']; ?>">
                                                     <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
-                                            <td style="border: 2px solid black"><a href="local.php?id=<?php echo $datos['idnegocio']; ?>">
+                                            <td scope="col"><a href="local.php?id=<?php echo $datos['idnegocio']; ?>">
                                                     <button class="btn btn-primary btn-xs" type="submit">Editar</button></a></td>
                                         </tr>
                                 </tbody>

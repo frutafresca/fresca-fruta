@@ -155,28 +155,27 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                   <br>
                   <!---**************************** -->
                   <!---Tabla de menu -->
-                  <table class="table table-bordered">
-                    <thead>
+                  <table class="table">
+                    <thead class="thead-dark">
                       <tr align="center">
-                        <th Style="border: 2px solid black">Nombre</th>
-                        <th Style="border: 2px solid black">Apellido</th>
-                        <th Style="border: 2px solid black">Correo</th>
-                        <th Style="border: 2px solid black">Telefono</th>
-                        <th Style="border: 2px solid black">Eliminar</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Eliminar</th>
                       <tr>
                     </thead>
 
                     <tbody>
                       <?php foreach ($resultado_mostrar as $datos) { ?>
                         <tr align="center">
-                          <td Style="border: 2px solid black"><?php echo $datos['nombre_usu']; ?></td>
-                          <td Style="border: 2px solid black"><?php echo $datos['apellido_usu']; ?></td>
-                          <td Style="border: 2px solid black"><?php echo $datos['correo_usu']; ?></td>
-                          <td Style="border: 2px solid black"><?php echo $datos['telefono_usu']; ?></td>
-                          <td Style="border: 2px solid black"><a href="eliminar_usuario.php?id=<?php echo $datos['idusuario']; ?>">
+                          <td scope="col"><?php echo $datos['nombre_usu']; ?></td>
+                          <td scope="col"><?php echo $datos['apellido_usu']; ?></td>
+                          <td scope="col"><?php echo $datos['correo_usu']; ?></td>
+                          <td scope="col"><?php echo $datos['telefono_usu']; ?></td>
+                          <td scope="col"><a href="eliminar_usuario.php?id=<?php echo $datos['idusuario']; ?>">
                               <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
-                      <?php } ?>
-
+                        <?php } ?>
                     </tbody>
                   </table>
                   </footer>
