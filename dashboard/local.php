@@ -150,12 +150,13 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         $direccion = $_POST['direccion'];
                         $telefono = $_POST['telefono'];
                         $correo = $_POST['correo'];
+                        $descripcion = $_POST['descripcion'];
                         //sentencia Sql
-                        $sql_insertar = "INSERT INTO negocio (nombre_negocio, direccion_negocio, telefono_negocio, correo_negocio)VALUES (?,?,?,?)";
+                        $sql_insertar = "INSERT INTO negocio (nombre_negocio, direccion_negocio, telefono_negocio, correo_negocio, descripcion_negocio)VALUES (?,?,?,?,?)";
                         //Preparar consulta
                         $consulta_insertar = $pdo->prepare($sql_insertar);
                         //Ejecutar la sentencia
-                        $consulta_insertar->execute(array($nombre, $direccion, $telefono, $correo));
+                        $consulta_insertar->execute(array($nombre, $direccion, $telefono, $correo, $descripcion));
                         //Header redirecciona la pagina
                         echo "<script> document.location.href='../dashboard/local.php';</script>";
                     }
@@ -202,6 +203,8 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                                         <br>
                                                                         <input class="form-control" placeholder="Correo" required autofocus type="text" name="correo">
                                                                         <br>
+                                                                        <input class="form-control" placeholder="Descripcion" required autofocus type="text" name="descripcion">
+                                                                        <br>
                                                                         <button class="btn btn-primary btn-xs" type="Submit">Registrar</button>
                                                                     </div>
                                                                 </form>
@@ -233,6 +236,8 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                                 <br>
                                                                 <input class="form-control" placeholder="Correo" required autofocus type="text" name="correo" value="<?php echo $resultado_editar['correo_negocio']; ?>">
                                                                 <br>
+                                                                <input class="form-control" placeholder="Descripcion" required autofocus type="text" name="descripcion" value="<?php echo $resultado_editar['descripcion_negocio']; ?>">
+                                                                <br>
                                                                 <input class="form-control" placeholder="id" required autofocus type="hidden" name="id_editar" value="<?php echo $resultado_editar['idnegocio']; ?>">
                                                                 <br>
                                                                 <button class="btn btn-primary btn-xs" type="Submit">Editar</button>
@@ -256,6 +261,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                         <th scope="col">Dirección</th>
                                         <th scope="col">Telefono</th>
                                         <th scope="col">Correo</th>
+                                        <th scope="col">Descripción</th>
                                         <th scope="col">Eliminar</th>
                                         <th scope="col">Editar</th>
 
@@ -271,6 +277,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                             <td scope="col"><?php echo $datos['direccion_negocio'] ?></td>
                                             <td scope="col"><?php echo $datos['telefono_negocio'] ?></td>
                                             <td scope="col"><?php echo $datos['correo_negocio'] ?></td>
+                                            <td scope="col"><?php echo $datos['descripcion_negocio'] ?></td>
                                             <td scope="col"><a href="eliminar_negocio.php?id=<?php echo $datos['idnegocio']; ?>">
                                                     <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
                                             <td scope="col"><a href="local.php?id=<?php echo $datos['idnegocio']; ?>">
