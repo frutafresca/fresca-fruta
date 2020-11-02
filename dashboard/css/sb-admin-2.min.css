@@ -2548,8 +2548,8 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #2653d4;
-    border-color: #244ec9
+    background-color: #413;
+    border-color: #413
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -5152,7 +5152,7 @@ a.badge:hover {
 a.badge-primary:focus,
 a.badge-primary:hover {
     color: #fff;
-    background-color: #2653d4
+    background-color: #413
 }
 
 a.badge-primary.focus,
@@ -6734,7 +6734,7 @@ a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
 button.bg-primary:hover {
-    background-color: #2653d4!important
+    background-color: #413!important
 }
 
 .bg-secondary {

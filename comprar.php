@@ -76,7 +76,9 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     </div>
 
                     <p id="item-5"></p><br><br><br>
-                    <b><p align="center">Frutas</p></b>
+                    <b>
+                        <p align="center">Frutas</p>
+                    </b>
                     <div class="container">
                         <div class="row">
                             <?php foreach ($resultado_mostrar as $datos) {
@@ -115,7 +117,9 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-1"></p><br><br>
-                    <b><p align="center">Verduras</p></b>
+                    <b>
+                        <p align="center">Verduras</p>
+                    </b>
                     <!-- Page Content -->
                     <div class="container">
                         <div class="row">
@@ -155,7 +159,9 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-2"></p><br><br>
-                    <b><p align="center">Aseo</p></b>
+                    <b>
+                        <p align="center">Aseo</p>
+                    </b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -196,7 +202,9 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-3"></p><br><br>
-                    <b><p class="tituloplaz" align="center">Granos</p></b>
+                    <b>
+                        <p class="tituloplaz" align="center">Granos</p>
+                    </b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -237,7 +245,9 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-4"></p><br><br>
-                    <b><p align="center">Lacteos</p></b>
+                    <b>
+                        <p align="center">Lacteos</p>
+                    </b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -278,7 +288,9 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <!-- /.container -->
 
                     <p id="item-6"></p><br><br>
-                    <b><p class="tituloplaz" align="center">Carnes frias</p></b>
+                    <b>
+                        <p class="tituloplaz" align="center">Carnes frias</p>
+                    </b>
                     <!-- Page Content -->
                     <!-- Page Content -->
                     <div class="container">
@@ -352,8 +364,8 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     <div class="row">
                         <div class="col-12">
                             <div class="shopping-cart-total d-flex align-items-center">
-                                <p class="mb-0">Total</p>
-                                <p class="ml-4 mb-0 shoppingCartTotal">0$</p>
+                                <label class="mb-0">Total</label>
+                                <p class="ml-4 mb-0 shoppingCartTotal" name="total">$0</p>
                                 <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
                                     <div class="toast-header">
                                         <span>✅</span>
@@ -366,7 +378,13 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                         Se aumentó correctamente la cantidad
                                     </div>
                                 </div>
-                                <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
+                                <?php
+                                if (['total']==0) { ?>
+                                    <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Debes agregar productos</button>
+                                <?php  } else { ?>
+                                    <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
+                                <?php  } ?>
+
                             </div>
                         </div>
                     </div>
@@ -392,6 +410,20 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             </div>
                         </div>
                     </div>
+                    <?php
+                        $cantidad_producto = ['cantidad'];
+                        $valor_producto = ['total'];
+                        $total_producto = ['total_producto'];
+
+                        include_once 'dao/conexion.php';
+                        $sql_inicio = "INSERT INTO factura_pedido (idfactura_pedido, cantidad_producto, valor_producto, total_producto, cliente_idcliente) VALUES (idfactura_pedido','cantidad_producto','valor_producto','total_producto','cliente_idcliente')";
+                        $consulta_resta = $pdo->prepare($sql_inicio);
+                        $consulta_resta->execute();
+                        $resultado = $consulta_resta->rowCount();
+                        $prueba = $consulta_resta->fetch(PDO::FETCH_OBJ);
+                        //Validacion de roles
+                    ?>
+
                     <!-- END MODAL COMPRA -->
 
 
