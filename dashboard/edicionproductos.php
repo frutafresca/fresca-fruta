@@ -190,10 +190,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                                             <option value="" disabled selected>Seleccione un tipo de producto</option>
                                                                             <option value="1">Frutas</option>
                                                                             <option value="2">Verduras</option>
-                                                                            <option value="3">Aseo</option>
-                                                                            <option value="4">Granos</option>
-                                                                            <option value="5">Lacteos</option>
-                                                                            <option value="6">Carnes frias</option>
+                                                                           
                                                                         </select>
                                                                         <br>
                                                                         <button class="btn btn-primary btn-xs" type="Submit">Registrar</button>

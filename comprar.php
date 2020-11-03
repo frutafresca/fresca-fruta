@@ -68,10 +68,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             </b>
                             <u><a class="nav-link" href="#item-5">Frutas</a></u>
                             <u><a class="nav-link" href="#item-1">Verduras</a></u>
-                            <u><a class="nav-link" href="#item-2">Aseo</a></u>
-                            <u><a class="nav-link" href="#item-3">Granos</a></u>
-                            <u><a class="nav-link" href="#item-4">Lacteos</a></u>
-                            <u><a class="nav-link" href="#item-6">Carnes frias</a></u>
+                            
                         </div>
                     </div>
 
@@ -87,6 +84,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
                                             <div class="card-body" style="background-color: #ffffff;">
+                                            <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -158,179 +156,6 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     </div>
                     <!-- /.container -->
 
-                    <p id="item-2"></p><br><br>
-                    <b>
-                        <p align="center">Aseo</p>
-                    </b>
-                    <!-- Page Content -->
-                    <!-- Page Content -->
-                    <div class="container">
-                        <div class="row">
-                            <?php foreach ($resultado_mostrar as $datos) {
-                                if ($datos['categoria_producto_idcategoria_producto'] == 3) {
-                            ?>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                        <div class="item shadow mb-4">
-                                            <div class="card-body" style="background-color: #ffffff;">
-                                                <h4 class="card-title">
-                                                    <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
-                                                </h4>
-                                                <h3><?php echo $datos['descripcion_producto'] ?></h3>
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$<?php echo $datos['precio_producto'] ?></h4>
-                                                    <br>
-                                                    <?php
-                                                    if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
-                                                        <center>
-                                                            <br>
-                                                            <button class="item-button btn btn-primary addToCart" type="submit">Añadir al carrito</button>
-                                                            <br>
-                                                        </center>
-                                                </div>
-                                            <?php }
-                                            ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.container -->
-
-                    <p id="item-3"></p><br><br>
-                    <b>
-                        <p class="tituloplaz" align="center">Granos</p>
-                    </b>
-                    <!-- Page Content -->
-                    <!-- Page Content -->
-                    <div class="container">
-                        <div class="row">
-                            <?php foreach ($resultado_mostrar as $datos) {
-                                if ($datos['categoria_producto_idcategoria_producto'] == 4) {
-                            ?>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                        <div class="item shadow mb-4">
-                                            <div class="card-body" style="background-color: #ffffff;">
-                                                <h4 class="card-title">
-                                                    <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
-                                                </h4>
-                                                <h3><?php echo $datos['descripcion_producto'] ?></h3>
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$<?php echo $datos['precio_producto'] ?></h4>
-                                                    <br>
-                                                    <?php
-                                                    if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
-                                                        <center>
-                                                            <br>
-                                                            <button class="item-button btn btn-primary addToCart" type="submit">Añadir al carrito</button>
-                                                            <br>
-                                                        </center>
-                                                </div>
-                                            <?php }
-                                            ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.container -->
-
-                    <p id="item-4"></p><br><br>
-                    <b>
-                        <p align="center">Lacteos</p>
-                    </b>
-                    <!-- Page Content -->
-                    <!-- Page Content -->
-                    <div class="container">
-                        <div class="row">
-                            <?php foreach ($resultado_mostrar as $datos) {
-                                if ($datos['categoria_producto_idcategoria_producto'] == 5) {
-                            ?>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                        <div class="item shadow mb-4">
-                                            <div class="card-body" style="background-color: #ffffff;">
-                                                <h4 class="card-title">
-                                                    <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
-                                                </h4>
-                                                <h3><?php echo $datos['descripcion_producto'] ?></h3>
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$<?php echo $datos['precio_producto'] ?></h4>
-                                                    <br>
-                                                    <?php
-                                                    if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
-                                                        <center>
-                                                            <br>
-                                                            <button class="item-button btn btn-primary addToCart" type="submit">Añadir al carrito</button>
-                                                            <br>
-                                                        </center>
-                                                </div>
-                                            <?php }
-                                            ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.container -->
-
-                    <p id="item-6"></p><br><br>
-                    <b>
-                        <p class="tituloplaz" align="center">Carnes frias</p>
-                    </b>
-                    <!-- Page Content -->
-                    <!-- Page Content -->
-                    <div class="container">
-                        <div class="row">
-                            <?php foreach ($resultado_mostrar as $datos) {
-                                if ($datos['categoria_producto_idcategoria_producto'] == 6) {
-                            ?>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                        <div class="item shadow mb-4">
-                                            <div class="card-body" style="background-color: #ffffff;">
-                                                <h4 class="card-title">
-                                                    <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
-                                                </h4>
-                                                <h3><?php echo $datos['descripcion_producto'] ?></h3>
-                                                <div class="item-details">
-                                                    <h4 class="item-price">$<?php echo $datos['precio_producto'] ?></h4>
-                                                    <br>
-                                                    <?php
-                                                    if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
-                                                        <center>
-                                                            <br>
-                                                            <button class="item-button btn btn-primary addToCart" type="submit">Añadir al carrito</button>
-                                                            <br>
-                                                        </center>
-                                                </div>
-                                            <?php }
-                                            ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.container -->
-                </center>
-            </div>
 
             <!-- END SECTION STORE -->
             <!-- START SECTION SHOPPING CART -->
@@ -365,6 +190,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         <div class="col-12">
                             <div class="shopping-cart-total d-flex align-items-center">
                                 <label class="mb-0">Total</label>
+                            
                                 <p class="ml-4 mb-0 shoppingCartTotal" name="total">$0</p>
                                 <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
                                     <div class="toast-header">
