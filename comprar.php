@@ -57,7 +57,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                 <!-- Portfolio Section Heading-->
                 <div class="text-center">
                     <br>
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Productos </h2>
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Productos </h2>
                 </div>
                 <br>
                 <center>
@@ -127,6 +127,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
                                             <div class="card-body" style="background-color: #ffffff;">
+                                            <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
