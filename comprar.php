@@ -229,6 +229,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                     </button>
                                 </div>
                                 <div class="modal-body">
+                                   
                                     <p>Pronto recibirá su pedido</p>
                                 </div>
                                 <div class="modal-footer">
@@ -237,13 +238,14 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             </div>
                         </div>
                     </div>
+
                     <?php
                         $cantidad_producto = ['cantidad'];
                         $valor_producto = ['total'];
                         $total_producto = ['total_producto'];
 
                         include_once 'dao/conexion.php';
-                        $sql_inicio = "INSERT INTO factura_pedido (idfactura_pedido, cantidad_producto, valor_producto, total_producto, cliente_idcliente) VALUES (idfactura_pedido','cantidad_producto','valor_producto','total_producto','cliente_idcliente')";
+                        $sql_inicio = "INSERT INTO factura_pedido (idfactura_pedido, cantidad_producto, valor_producto, total_producto, cliente_idcliente) VALUES (1, 'cantidad_producto','valor_producto','total_producto', 1)";
                         $consulta_resta = $pdo->prepare($sql_inicio);
                         $consulta_resta->execute();
                         $resultado = $consulta_resta->rowCount();
@@ -252,8 +254,6 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                     ?>
 
                     <!-- END MODAL COMPRA -->
-
-
                 </div>
 
             </section>
