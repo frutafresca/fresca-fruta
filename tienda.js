@@ -40,7 +40,8 @@ function addItemToShoppingCart(itemTitle, itemPrice) {
 
     const shoppingCartRow = document.createElement('div');
     const shoppingCartContent = `
-  <div class="row shoppingCartItem">
+    <form action="carritoCompras.php" method="POST">
+        <div class="row shoppingCartItem">
         <div class="col-6">
             <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
                 <label class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0" name="titulo">${itemTitle}</label>
@@ -59,7 +60,37 @@ function addItemToShoppingCart(itemTitle, itemPrice) {
                 <button class="btn btn-danger buttonDelete" type="button">X</button>
             </div>
         </div>
-    </div>`;
+    </div>
+    <!-- START TOTAL -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="shopping-cart-total d-flex align-items-center">
+                                        <label class="mb-0">Total</label>
+
+                                        <p class="ml-4 mb-0 shoppingCartTotal" name="total">$0</p>
+                                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+                                            <div class="toast-header">
+                                                <span>✅</span>
+                                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="toast-body text-white">
+                                                Se aumentó correctamente la cantidad
+                                            </div>
+                                        </div>
+                                        <?php
+                                        if (['total'] == 0) { ?>
+                                            <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Debes agregar productos</button>
+                                        <?php  } else { ?>
+                                            <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
+                                        <?php  } ?>
+
+                                    </div>
+                                </div>
+                            </div>
+    </form>`;
     shoppingCartRow.innerHTML = shoppingCartContent;
     shoppingCartItemsContainer.append(shoppingCartRow);
 

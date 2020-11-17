@@ -68,7 +68,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             </b>
                             <u><a class="nav-link" href="#item-5">Frutas</a></u>
                             <u><a class="nav-link" href="#item-1">Verduras</a></u>
-                            
+
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
                                             <div class="card-body" style="background-color: #ffffff;">
-                                            <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                                <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -127,7 +127,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                         <div class="item shadow mb-4">
                                             <div class="card-body" style="background-color: #ffffff;">
-                                            <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
+                                                <img class="card-img-top rounded" src="<?php echo $datos['foto_producto']; ?>" alt="">
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
@@ -151,118 +151,72 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             <?php
                                 }
                             }
-                            ?>
+                            ?>  
                         </div>
                         <!-- /.row -->
                     </div>
                     <!-- /.container -->
-
-
-            <!-- END SECTION STORE -->
-            <!-- START SECTION SHOPPING CART -->
-            <section class="shopping-cart">
-                <div class="container">
-                    <h1 class="text-center">Carrito de compras</h1>
-                    <hr>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="shopping-cart-header">
-                                <h6>Producto</h6>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="shopping-cart-header">
-                                <h6 class="text-truncate">Precio</h6>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="shopping-cart-header">
-                                <h6>Cantidad</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ? START SHOPPING CART ITEMS -->
-                    <div class="shopping-cart-items shoppingCartItemsContainer">
-                    </div>
-                    <!-- ? END SHOPPING CART ITEMS -->
-
-                    <!-- START TOTAL -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="shopping-cart-total d-flex align-items-center">
-                                <label class="mb-0">Total</label>
-                            
-                                <p class="ml-4 mb-0 shoppingCartTotal" name="total">$0</p>
-                                <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
-                                    <div class="toast-header">
-                                        <span>✅</span>
-                                        <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
-                                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="toast-body text-white">
-                                        Se aumentó correctamente la cantidad
+                    <!-- START SECTION SHOPPING CART -->
+                    <section class="shopping-cart">
+                        <div class="container">
+                            <h1 class="text-center">Carrito de compras</h1>
+                            <hr>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="shopping-cart-header">
+                                        <h6>Producto</h6>
                                     </div>
                                 </div>
-                                <?php
-                                if (['total']==0) { ?>
-                                    <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Debes agregar productos</button>
-                                <?php  } else { ?>
-                                    <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
-                                <?php  } ?>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- END TOTAL -->
-
-                    <!-- START MODAL COMPRA -->
-                    <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                <div class="col-2">
+                                    <div class="shopping-cart-header">
+                                        <h6 class="text-truncate">Precio</h6>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                   
-                                    <p>Pronto recibirá su pedido</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <div class="col-4">
+                                    <div class="shopping-cart-header">
+                                        <h6>Cantidad</h6>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- ? START SHOPPING CART ITEMS -->
+                            <div class="shopping-cart-items shoppingCartItemsContainer">
+                            </div>
+                            <!-- ? END SHOPPING CART ITEMS -->
+
+                            <!-- END TOTAL -->
+
+                            <!-- START MODAL COMPRA -->
+                            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <p>Pronto recibirá su pedido</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- END MODAL COMPRA -->
                         </div>
-                    </div>
 
-                    <?php
-                        $cantidad_producto = ['cantidad'];
-                        $valor_producto = ['total'];
-                        $total_producto = ['total_producto'];
-
-                        include_once 'dao/conexion.php';
-                        $sql_inicio = "INSERT INTO factura_pedido (idfactura_pedido, cantidad_producto, valor_producto, total_producto, cliente_idcliente) VALUES (1, 'cantidad_producto','valor_producto','total_producto', 1)";
-                        $consulta_resta = $pdo->prepare($sql_inicio);
-                        $consulta_resta->execute();
-                        $resultado = $consulta_resta->rowCount();
-                        $prueba = $consulta_resta->fetch(PDO::FETCH_OBJ);
-                        //Validacion de roles
-                    ?>
-
-                    <!-- END MODAL COMPRA -->
-                </div>
-
-            </section>
-            <!-- END SECTION SHOPPING CART -->
-            <!-- SCRIPTS -->
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-            <script src="tienda.js"></script>
+                    </section>
+                    <!-- END SECTION SHOPPING CART -->
+                    <!-- SCRIPTS -->
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+                    <script src="tienda.js"></script>
     </body>
 
     </html>
