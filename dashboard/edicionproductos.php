@@ -202,7 +202,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
 
                                                                             </select>
                                                                             <br>
-                                                                            <button class="btn btn-primary btn-xs" type="Submit">Registrar</button>
+                                                                            <button class="btn btn-primary btn-xs" type="submit">Registrar</button>
                                                                         </div>
                                                                     </form>
                                                                 <?php } ?>
@@ -243,9 +243,14 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                         <br>
                                                         <!---**************************** -->
                                                         <!---Tabla de menu -->
+                                                        <h4 align="center" class="m-0 font-weight-bold text-primary">Frutas
+                                                            <br>
+                                                            <br>
+                                                        </h4>
                                                         <table class="table">
                                                             <thead class="thead-dark">
                                                                 <tr align="center">
+                                                                    <th scope="col">Categoria</th>
                                                                     <th scope="col">Producto</th>
                                                                     <th scope="col">Descripción</th>
                                                                     <th scope="col">Precio</th>
@@ -256,18 +261,74 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                             </thead>
 
                                                             <tbody>
-                                                                <?php foreach ($resultado_mostrar as $datos) { ?>
-                                                                    <tr align="center">
-                                                                        <td scope="col"><?php echo $datos['nombre_producto']; ?></td>
-                                                                        <td scope="col"><?php echo $datos['descripcion_producto']; ?></td>
-                                                                        <td scope="col"><?php echo $datos['precio_producto']; ?></td>
-                                                                        <td scope="col"><?php echo $datos['foto_producto']; ?></td>
-                                                                        <td scope="col"><a href="eliminar_producto.php?id=<?php echo $datos['idproducto']; ?>">
-                                                                                <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
-                                                                        <td scope="col"><a href="edicionproductos.php?id=<?php echo $datos['idproducto']; ?>">
-                                                                                <button class="btn btn-primary btn-xs" type="submit">Editar</button></a></td>
-                                                                    </tr>
-                                                                <?php } ?>
+                                                                <?php foreach ($resultado_mostrar as $datos) {
+                                                                    if ($datos['categoria_producto_idcategoria_producto'] == 1) { ?>
+                                                                        <tr align="center">
+                                                                            <?php if ($datos['categoria_producto_idcategoria_producto'] == 1) {
+                                                                            ?>
+                                                                                <td scope="col">Frutas</a></td>
+                                                                            <?php
+                                                                            } else if ($datos['categoria_producto_idcategoria_producto'] == 2) {
+                                                                            ?>
+                                                                                <td scope="col">Verduras</a></td>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                            <td scope="col"><?php echo $datos['nombre_producto']; ?></td>
+                                                                            <td scope="col"><?php echo $datos['descripcion_producto']; ?></td>
+                                                                            <td scope="col"><?php echo $datos['precio_producto']; ?></td>
+                                                                            <td scope="col"><?php echo $datos['foto_producto']; ?></td>
+                                                                            <td scope="col"><a href="eliminar_producto.php?id=<?php echo $datos['idproducto']; ?>">
+                                                                                    <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
+                                                                            <td scope="col"><a href="edicionproductos.php?id=<?php echo $datos['idproducto']; ?>">
+                                                                                    <button class="btn btn-primary btn-xs" type="submit">Editar</button></a></td>
+                                                                        </tr>
+                                                                <?php }
+                                                                } ?>
+
+                                                            </tbody>
+                                                        </table>
+                                                        <br>
+                                                        <h4 align="center" class="m-0 font-weight-bold text-primary">Verduras</h4>
+                                                        <br>
+                                                        <table class="table">
+                                                            <thead class="thead-dark">
+                                                                <tr align="center">
+                                                                    <th scope="col">Categoria</th>
+                                                                    <th scope="col">Producto</th>
+                                                                    <th scope="col">Descripción</th>
+                                                                    <th scope="col">Precio</th>
+                                                                    <th scope="col">Foto</th>
+                                                                    <th scope="col">Eliminar</th>
+                                                                    <th scope="col">Editar</th>
+                                                                <tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <?php foreach ($resultado_mostrar as $datos) {
+                                                                    if ($datos['categoria_producto_idcategoria_producto'] == 2) { ?>
+                                                                        <tr align="center">
+                                                                            <?php if ($datos['categoria_producto_idcategoria_producto'] == 1) {
+                                                                            ?>
+                                                                                <td scope="col">Frutas</a></td>
+                                                                            <?php
+                                                                            } else if ($datos['categoria_producto_idcategoria_producto'] == 2) {
+                                                                            ?>
+                                                                                <td scope="col">Verduras</a></td>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                            <td scope="col"><?php echo $datos['nombre_producto']; ?></td>
+                                                                            <td scope="col"><?php echo $datos['descripcion_producto']; ?></td>
+                                                                            <td scope="col"><?php echo $datos['precio_producto']; ?></td>
+                                                                            <td scope="col"><?php echo $datos['foto_producto']; ?></td>
+                                                                            <td scope="col"><a href="eliminar_producto.php?id=<?php echo $datos['idproducto']; ?>">
+                                                                                    <button class="btn btn-primary btn-xs" type="submit">Eliminar</button></a></td>
+                                                                            <td scope="col"><a href="edicionproductos.php?id=<?php echo $datos['idproducto']; ?>">
+                                                                                    <button class="btn btn-primary btn-xs" type="submit">Editar</button></a></td>
+                                                                        </tr>
+                                                                <?php }
+                                                                } ?>
 
                                                             </tbody>
                                                         </table>

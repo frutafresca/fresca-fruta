@@ -69,19 +69,19 @@ if ($_POST) {
                 <label for="inputNombre">Nombre</label>
               </div>
               <div class="form-label-group">
-                <input type="text" id="inputApellido" name="apellido" class="form-control" placeholder="Apellido" required autofocus>
+                <input type="text" id="inputApellido" name="apellido" class="form-control" placeholder="Apellido" required>
                 <label for="inputApellido">Apellido</label>
               </div>
               <div class="form-label-group">
-                <input type="number" id="inputCedula" name="cedula" class="form-control" placeholder="Cédula" required autofocus>
+                <input type="number" id="inputCedula" name="cedula" class="form-control" placeholder="Cédula" required>
                 <label for="inputCedula">Cédula</label>
               </div>
               <div class="form-label-group">
-                <input type="number" id="inputTelefono" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
+                <input type="number" id="inputTelefono" name="telefono" class="form-control" placeholder="Telefono" value="1" required>
                 <label for="inputTelefono">Telefono</label>
               </div>
               <div class="form-label-group">
-                <input type="email" id="inputEmail" name="correo" class="form-control" placeholder="Correo" required autofocus>
+                <input type="email" id="inputEmail" name="correo" class="form-control" placeholder="Correo" required>
                 <label for="inputEmail">Correo</label>
               </div>
               <div class="form-label-group">
@@ -89,7 +89,7 @@ if ($_POST) {
                 <label for="inputPassword">Contraseña</label>
               </div>
               <div class="form-label-group">
-                <select name="roles" class="form-control" required autofocus>
+                <select name="roles" class="form-control" required>
                   <option value="1">Administrador</option>
                 </select>
               </div>
