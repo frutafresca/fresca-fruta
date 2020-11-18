@@ -31,7 +31,7 @@ session_start();
       $_SESSION["idusuario"] = $prueba->idusuario;
       $rol_prueba = $prueba->roles_idroles;
       if ($rol_prueba == 1) {
-        echo "<script> document.location.href='../dashboard/index.php';</script>";
+        echo "<script> document.location.href='../dashboard/usuarios.php';</script>";
       } else {
         if ($rol_prueba == 2) {
           echo "<script> document.location.href='../comprar.php';</script>";

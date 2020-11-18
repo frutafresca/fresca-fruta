@@ -8,34 +8,34 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="frutafresca/js/all.js"></script>
-        <link rel="stylesheet" href="../frutafresca/css/letra1.css">
-        <link rel="stylesheet" href="../frutafresca/css/letra2.css">
-        <link rel="stylesheet" href="../frutafresca/css/estiloss.css">
-        <link rel="stylesheet" href="../frutafresca/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../frutafresca/css/imagen.css">
-        <link rel="stylesheet" href="../frutafresca/css/letra.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <script src="js/all.js"></script>
+        <link rel="stylesheet" href="css/letra1.css">
+        <link rel="stylesheet" href="css/letra2.css">
+        <link rel="stylesheet" href="css/estiloss.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/imagen.css">
+        <link rel="stylesheet" href="css/letra.css">
         <script src="js/jquery-3.5.1.js"></script>
         <script src="js/bootstrap.bundle.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <title>Productos</title>
     </head>
 
-    <body>
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" background-color=#42E525;>
+    <body id="page-top" style="background-color: #8DE525">
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" background-color=#010304;>
             <div class="container">
                 <img width="120" src="#" alt="">
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menú
                     <i class="fas fa-bars"></i>
                 </button>
+                <a href="../index.php"><img width="160" src="http://localhost/frutafresca/img/logo.png?id=<?php echo $_SESSION["correo_usu"]; ?>" alt="tt"></a>
                 <div class="collapse navbar-collapse" id="navbarResponsive" id="letra">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/index.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Inicio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/menu.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Productos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Inicio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menu.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Productos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="comprar.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Comprar</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Controladores/Cerrar_Sesion.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -88,9 +88,9 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
-                                                <h3><?php echo $datos['descripcion_producto'] ?></h3>
+                                                <p><?php echo $datos['descripcion_producto'] ?></p>
                                                 <div class="item-details">
-                                                    <h4 class="item-price">$<?php echo $datos['precio_producto'] ?></h4>
+                                                    <p class="item-price">$<?php echo $datos['precio_producto'] ?></p>
                                                     <br>
                                                     <?php
                                                     if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
@@ -131,9 +131,9 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                                 <h4 class="card-title">
                                                     <p class="item-title"><?php echo $datos['nombre_producto'] ?></p>
                                                 </h4>
-                                                <h3><?php echo $datos['descripcion_producto'] ?></h3>
+                                                <p><?php echo $datos['descripcion_producto'] ?></p>
                                                 <div class="item-details">
-                                                    <h4 class="item-price">$<?php echo $datos['precio_producto'] ?></h4>
+                                                    <p class="item-price">$<?php echo $datos['precio_producto'] ?></p>
                                                     <br>
                                                     <?php
                                                     if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) { ?>
@@ -151,11 +151,14 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             <?php
                                 }
                             }
-                            ?>  
+                            ?>
                         </div>
                         <!-- /.row -->
                     </div>
                     <!-- /.container -->
+
+
+                    <!-- END SECTION STORE -->
                     <!-- START SECTION SHOPPING CART -->
                     <section class="shopping-cart">
                         <div class="container">
@@ -183,6 +186,36 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                             </div>
                             <!-- ? END SHOPPING CART ITEMS -->
 
+                            <!-- START TOTAL -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="shopping-cart-total d-flex align-items-center">
+                                        <label class="mb-0">Total</label>
+
+                                        <p class="ml-4 mb-0 shoppingCartTotal" name="total">$0</p>
+                                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+                                            <div class="toast-header">
+                                                <span>✅</span>
+                                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="toast-body text-white">
+                                                Se aumentó correctamente la cantidad
+                                            </div>
+                                        </div>
+                                        <?php
+                                        if (['total'] == 0) { ?>
+                                            <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Debes agregar productos</button>
+                                        <?php  } else { ?>
+                                            <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
+                                        <?php  } ?>
+
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- END TOTAL -->
 
                             <!-- START MODAL COMPRA -->
@@ -205,8 +238,6 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                                     </div>
                                 </div>
                             </div>
-
-
                             <!-- END MODAL COMPRA -->
                         </div>
 
@@ -222,6 +253,6 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
     </html>
 <?php
 } else {
-    echo "<script> document.location.href='../dashboard/404.php';</script>";
+    echo "<script> document.location.href='dashboard/404.php';</script>";
 }
 ?>

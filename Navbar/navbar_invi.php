@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Invitado</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="../Classdiamond2/img/plazoleta/plaz25.jpg" />
-    <script src="../Classdiamond2/js/all.js"></script>
-    <script src="../frutafresca/js/all.js"></script>
-    <link rel="stylesheet" href="../frutafresca/css/letra1.css">
-    <link rel="stylesheet" href="../frutafresca/css/letra2.css">
-    <link rel="stylesheet" href="../frutafresca/css/estiloss.css">
-    <link rel="stylesheet" href="../frutafresca/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../frutafresca/css/imagen.css">
-    <link rel="stylesheet" href="../frutafresca/css/letra.css">
-    <script src="../js/jquery-3.5.1.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/plazoleta/plaz25.jpg" />
+    <script src="js/all.js"></script>
+    <script src="js/all.js"></script>
+    <link rel="stylesheet" href="css/letra1.css">
+    <link rel="stylesheet" href="css/letra2.css">
+    <link rel="stylesheet" href="css/estiloss.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/imagen.css">
+    <link rel="stylesheet" href="css/letra.css">
+    <script src="s/jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body id="page-top" style="background-color: #8DE525">
@@ -29,6 +29,7 @@
                 Menú
                 <i class="fas fa-bars"></i>
             </button>
+            <a href="../index.php"><img width="160" src="http://localhost/frutafresca/img/logo.png" alt="tt"></a>
             <div class="collapse navbar-collapse" id="navbarResponsive" id="letra">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/frutafresca/index.php">Inicio</a></li>

@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="/Classdiamond2/img/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
     <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="../css/letra1.css">
     <link rel="stylesheet" href="../css/letra2.css">
     <link href="../css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/iniciosesion.css">
     <link rel="stylesheet" href="../css/letra.css">
-    <link rel="stylesheet" href="../Classdiamond2/css/fuentesplaz.css">
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/bootstrap.js"></script>
 

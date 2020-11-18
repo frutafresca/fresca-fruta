@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>inicio</title>
+    <title>Inicio</title>
     <!-- Font Awesome icons (free version)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -58,7 +59,8 @@
                 <p class="pre-wrap masthead-subheading font-weight-light mb-0"><?php echo $datos['descripcion_negocio'] ?></p>
             </div>
         </header>
-
+        <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7015717670047!2d-75.33929698590696!3d6.170698928877621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46a026400d9ddb%3A0x917801dbcb53dfe2!2sCra.%2031%20%2325-125%2C%20Marinilla%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1605650198349!5m2!1ses!2sco" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center>
+        <br>
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
@@ -83,8 +85,9 @@
     <?php } ?>
     <!-- Copyright Section-->
     <section class="copyright py-4 text-center text-white">
-        <div class="container"><small class="pre-wrap">Copyright © Your Website 2020</small></div>
+        <div class="container"><small class="pre-wrap">Fruta fresca © Tu sitio web 2020</small></div>
     </section>
+    
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
     <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
     <!-- Bootstrap core JS-->

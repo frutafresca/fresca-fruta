@@ -73,11 +73,11 @@ if ($_POST) {
                 <label for="inputApellido">Apellido</label>
               </div>
               <div class="form-label-group">
-                <input type="text" id="inputCedula" name="cedula" class="form-control" placeholder="Cédula" required autofocus>
+                <input type="number" id="inputCedula" name="cedula" class="form-control" placeholder="Cédula" required autofocus>
                 <label for="inputCedula">Cédula</label>
               </div>
               <div class="form-label-group">
-                <input type="text" id="inputTelefono" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
+                <input type="number" id="inputTelefono" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
                 <label for="inputTelefono">Telefono</label>
               </div>
               <div class="form-label-group">
