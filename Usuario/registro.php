@@ -28,9 +28,12 @@ if ($_POST) {
     $consulta_insertar->execute(array($nombre, $apellido, $cedula, $telefono, $correo, $contrasena, $roles));
     echo "<script>alert('Datos almacenados correctamente');</script>";
     echo "<script> document.location.href='../Usuario/iniciar sesion.php';</script>";
+
   }
 }
 ?>
+
+
 <!DOCTYPE html>
 
 <html lang="es">
