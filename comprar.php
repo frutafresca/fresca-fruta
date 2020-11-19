@@ -36,11 +36,44 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Inicio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menu.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Productos</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="comprar.php?id=<?php echo $_SESSION["correo_usu"]; ?>">Comprar</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#modaldomicilio">Instructivo de compra</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Controladores/Cerrar_Sesion.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <!-- Modal -->
+<div class="modal fade" id="modaldomicilio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <center></center>
+                <a type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <b>
+                        <p> Como utilizar el carrito de compras </p>
+                    </b>
+                    <b>
+                        <p> Instructivo </p>
+                    </b>
+                    <p>1: </p>
+                    <p>2: </p>
+                    <p>3: </p>
+                    <p>4: </p>
+                    <b>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Modal -->
         <?php
         include_once 'dao/conexion.php';
         //Mostrar los datos almacenados

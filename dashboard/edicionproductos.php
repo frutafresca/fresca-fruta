@@ -80,6 +80,15 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
 
                     <!-- Divider -->
                     <hr class="sidebar-divider my-0">
+
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="pedidos.php">
+                            <span>Pedidos</span></a>
+                    </li>
+
+                    <!-- Divider -->
+                    <hr class="sidebar-divider my-0">
                 </ul>
                 <!-- End of Sidebar -->
 
@@ -144,7 +153,7 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         //Llamar a la conexion base de datos
                         include_once '../dao/conexion.php';
                         //Mostrar los datos almacenados
-                        $sql_mostrar = "SELECT * FROM producto";
+                        $sql_mostrar = "SELECT * FROM producto ORDER BY nombre_producto asc ";
                         //Prepara sentencia
                         $Consultar_mostrar = $pdo->prepare($sql_mostrar);
                         //Ejecutar consulta

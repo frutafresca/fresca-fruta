@@ -77,9 +77,15 @@ if (isset($_SESSION["correo_usu"]) or isset($_SESSION["idusuario"])) {
                         <a class="nav-link" href="usuarios.php">
                             <span>Administrar usuarios</span></a>
                     </li>
-
+                    
                     <!-- Divider -->
                     <hr class="sidebar-divider my-0">
+
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="pedidos.php">
+                            <span>Pedidos</span></a>
+                    </li>
 
                     <!-- Divider -->
                     <hr class="sidebar-divider my-0">

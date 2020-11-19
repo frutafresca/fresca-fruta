@@ -11,14 +11,14 @@ if ($_POST) {
   $contrasena = md5($_POST['contrasena']);
   $roles = $_POST['roles'];
   //LLamo al campo cédula y verifico que no esté registrado
-  $sql_restaexistente = "SELECT * FROM tbl_usuario WHERE cedula_usu='$cedula'";
+  $sql_restaexistente = "SELECT * FROM tbl_usuario WHERE cedula_usu=? or correo_usu=?";
   $consulta_resta = $pdo->prepare($sql_restaexistente);
-  $consulta_resta->execute();
+  $consulta_resta->execute(array($cedula,$correo));
   //Filtrar
   $resultado_resta = $consulta_resta->rowCount();
   var_dump($resultado_resta);
   if ($resultado_resta) {
-    echo "<script>alert('La cédula ingresada ya existe!, por favor verificala e intenta nuevamente');</script>";
+    echo "<script>alert('La cédula ingresada y/o el correo ya existe!, por favor verificalos e intenta nuevamente');</script>";
   } else {
     //sentencia Sql
     $sql_insertar = "INSERT INTO tbl_usuario (nombre_usu,apellido_usu,cedula_usu,telefono_usu,correo_usu,contrasena_usu,roles_idroles)VALUES (?,?,?,?,?,?,?)";
